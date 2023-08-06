@@ -1,0 +1,88 @@
+
+<section id="contactar">
+    <h2 class="titulo">Contacto</h2>
+    <form id="form-aplicacion" *ngIf="mostrarForm" [formGroup]="formAplicacion" #myForm="ngForm" (ngSubmit)="iniciarPeticionPost()">
+      <!-- style="display: none;" -->
+      <div style="display: none;" class="input-aplicacion">
+        <label for="id">ID Oferta: </label>
+        <input type="text" id="id" name="id" formControlName="id">
+      </div>
+      <div class="input-aplicacion">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          [class.is-valid]="emailField!.valid"
+          [class.is-invalid]="emailField!.touched && !emailField!.valid">
+        <div class="mensaje-error" *ngIf="!emailField!.valid  && (emailField!.dirty || emailField!.touched)">
+          <div *ngIf="emailField!.errors?.['required']">
+            *Este campo es requerido
+          </div>
+          <div *ngIf="emailField!.errors?.['email']">
+            *El email no es válido.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-aplicacion">
+        <label for="cedula">Cédula: </label>
+        <input
+          type="number"
+          name="cedula"
+          formControlName="cedula"
+          [class.is-valid]="cedulaField!.valid"
+          [class.is-invalid]="cedulaField!.touched && !cedulaField!.valid">
+        <div class="mensaje-error" *ngIf="!cedulaField!.valid  && (cedulaField!.dirty || cedulaField!.touched)">
+          <div *ngIf="cedulaField!.errors?.['required']">
+            *Este campo es requerido
+          </div>
+          <div *ngIf="cedulaField!.errors?.['min']">
+            *La cédula debe tener al menos 6 digitos.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-aplicacion">
+        <label for="nombre">Nombre: </label>
+        <input
+          type="text"
+          name="nombre"
+          formControlName="nombre"
+          [class.is-valid]="nombreField!.valid"
+          [class.is-invalid]="nombreField!.touched && !nombreField!.valid">
+        <div class="mensaje-error" *ngIf="!nombreField!.valid  && (nombreField!.dirty || nombreField!.touched)">
+          <div *ngIf="nombreField!.errors?.['required']">
+            *Este campo es requerido
+          </div>
+          <div *ngIf="nombreField!.errors?.['stringValid']">
+            *El nombre no debe tener caracteres especiales ni numeros.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-aplicacion">
+        <label for="telefono">Teléfono: </label>
+        <input
+          type="number"
+          name="telefono"
+          formControlName="telefono"
+          [class.is-valid]="telefonoField!.valid"
+          [class.is-invalid]="telefonoField!.touched && !telefonoField!.valid">
+        <div class="mensaje-error" *ngIf="!telefonoField!.valid  && (telefonoField!.dirty || telefonoField!.touched)">
+          <div *ngIf="telefonoField!.errors?.['required']">
+            *Este campo es requerido
+          </div>
+          <div *ngIf="telefonoField!.errors?.['min']">
+            *El número debe tener 10 digitos.
+          </div>
+        </div>
+      </div>
+      <div class="input-aplicacion" style="align-content:center;">
+        <input type="submit" value="Enviar" class="boton-submit">
+      </div>
+    </form>
+    <h2 *ngIf="!mostrarForm" style="text-align: center;">Respuesta guardada</h2>
+
+
+</section>

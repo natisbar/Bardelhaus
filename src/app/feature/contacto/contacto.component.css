@@ -1,0 +1,102 @@
+#contactar{
+  padding: 2rem 4rem;
+  background-color: #FFFFFF;
+}
+
+.titulo{
+  text-align: center;
+}
+
+.encabezado{
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  color: #B95E9C;
+  font-size: 1.2rem;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .encabezado i{
+    position: absolute;
+    left: 95%;
+    top: 30%;
+    /* color: black; */
+    transition: transform 0.4s ease-in-out;
+  }
+
+  #contactar{
+    padding: 2rem 2rem;
+    background-color: #f3e7f3;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+}
+
+#form-aplicacion{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content:center;
+  /* border: solid #005883; */
+  /* padding-top: 1.5rem; */
+}
+
+#form-aplicacion input{
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+#form-aplicacion label{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.input-aplicacion {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  width: 65%;
+}
+
+.boton-submit{
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    color: #fff;
+    border-color: #005883;
+    background-color: #005883;
+}
+
+.boton-submit:hover{
+  cursor: pointer;
+  color: #000;
+  box-shadow: 1px 2px grey;
+  border-color: #F8712E;
+  background-color: #F8712E;
+}
+
+.mensaje-error{
+    text-align: right;
+    font-size: 0.8rem;
+    color: red;
+}
+
+.is-valid{
+  border: solid 2px green;
+}
+
+.is-invalid{
+  border: solid 2px red;
+}
+

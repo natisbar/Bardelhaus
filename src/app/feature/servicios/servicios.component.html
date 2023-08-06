@@ -1,0 +1,20 @@
+<section id="servicios">
+  <h2 class="titulo">Servicios</h2>
+  <div class="contenedor">
+    <div class="servicio"
+        *ngFor = "let servicio of servicios; let i = index">
+        <div class="contenedor-img">
+          <figure>
+            <img src="{{servicio.img}}" alt="">
+          </figure>
+        </div>
+        <div class="nombre">
+          <p>{{servicio.nombre}}</p>
+        </div>
+        <div class="descripcion">
+          <p>{{servicio.descripcion}}</p>
+        </div>
+    </div>
+  </div>
+</section>
+

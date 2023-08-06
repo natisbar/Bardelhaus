@@ -1,0 +1,40 @@
+<section id="proyectos">
+  <div class="titulo">
+    <h2>Proyectos</h2>
+  </div>
+  <div class="contenedor">
+    <div class="proyecto"
+        *ngFor = "let proyecto of proyectosWeb; let i = index">
+        <div class="contenedor-img">
+          <figure>
+            <img src="{{proyecto.img}}" alt="">
+          </figure>
+        </div>
+        <div class="descripcion">
+          <p>{{proyecto.tipo}}</p>
+          <p><i>{{proyecto.descripcion}}</i></p>
+        </div>
+        <div class="informacion">
+          <a class="btn-principal" target="_blank" href="{{proyecto.url}}">Ver mas</a>
+        </div>
+    </div>
+
+
+
+    <div class="proyecto">
+      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
+      <div class="contenedor-img">
+        <figure>
+          <img src="" alt="">
+        </figure>
+      </div>
+      <div class="nombre">
+        <p></p>
+      </div>
+      <div class="descripcion">
+        <p></p>
+      </div>
+  </div>
+  </div>
+</section>
+

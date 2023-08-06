@@ -1,0 +1,12 @@
+<nav id="barra-navegacion">
+  <div class="navp-brand">
+    <a href="#">
+      <img src="{{imageToolbar}}" alt="Logo de jesvalstore">Bardelhaus
+    </a>
+  </div>
+  <ul class="navp">
+    <li class="navp-item" *ngFor="let item of items; let i as index">
+      <a class="navp-link draw" (click)="redirigirEnPagina(item.idUbicacion)">{{item.nombre}}</a>
+    </li>
+  </ul>
+</nav>

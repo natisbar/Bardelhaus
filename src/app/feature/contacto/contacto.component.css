@@ -1,40 +1,30 @@
 #contactar{
-  padding: 2rem 4rem;
+  padding: 2rem 1.5rem;
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-content:center;
+  flex-wrap: wrap;
 }
 
 .titulo{
   text-align: center;
+  padding-bottom: 1rem;
 }
 
-.encabezado{
-  position: relative;
-  transition: all 0.4s ease-in-out;
-  color: #B95E9C;
-  font-size: 1.2rem;
+.center-items{
+  display: flex;
+  justify-content: center;
+  /* align-content:center; */
 }
 
-
-
-@media screen and (max-width: 1200px) {
-
-  .encabezado i{
-    position: absolute;
-    left: 95%;
-    top: 30%;
-    /* color: black; */
-    transition: transform 0.4s ease-in-out;
-  }
-
-  #contactar{
-    padding: 2rem 2rem;
-    background-color: #f3e7f3;
-  }
-
-}
-
-@media screen and (max-width: 500px) {
-
+.contenedor-form{
+  width: max-content;
+  padding: 1rem;
+  border: solid #000000;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 #form-aplicacion{
@@ -42,14 +32,13 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-content:center;
-  /* border: solid #005883; */
-  /* padding-top: 1.5rem; */
+  padding: 1.5rem 0;
 }
 
 #form-aplicacion input{
   padding: 0.5rem;
   font-size: 1rem;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 #form-aplicacion label{
@@ -57,12 +46,23 @@
   font-weight: 700;
 }
 
-.input-aplicacion {
+.contenedor-input-radio{
+  display: flex;
+  padding-bottom: 1rem;
+  /* justify-content:space-between; */
+}
+
+.input-radio{
+  display: flex;
+  margin-right: 3rem;
+}
+
+.input-text {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   padding-bottom: 1rem;
-  width: 65%;
+  /* width: 65%; */
 }
 
 .boton-submit{
@@ -98,5 +98,34 @@
 
 .is-invalid{
   border: solid 2px red;
+}
+
+.btn-principal{
+  padding: 0.5rem 2rem;
+  color: white;
+  font-size: 1rem;
+  background-color: #000000;
+  border-radius: 10px;
+  border: solid 5px #FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
+  border: solid 2px BLACK;
+}
+
+.btn-principal:hover{
+  border: solid 2px BLACK;
+  background-color: #edf0f4;
+  color: black;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+
 }
 

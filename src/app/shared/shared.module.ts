@@ -2,7 +2,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { ClienteService } from "./service/cliente.service";
+import { ContactarService } from "./service/contactar.service";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -17,6 +17,6 @@ import { HttpClientModule } from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ClienteService]
+  providers: [ContactarService]
 })
 export class SharedModule {}

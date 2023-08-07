@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/shared/service/cliente.service';
 import { ResponseRequest } from 'src/app/shared/models/responseRequest';
 import { ProyectoWeb } from '../shared/model/proyectoWeb';
 
@@ -33,15 +32,39 @@ const DESARROLLO_WEB: ProyectoWeb[] = [
 export class ClientesComponent implements OnInit{
 
   public proyectosWeb: ProyectoWeb[] = DESARROLLO_WEB;
-  public clienteActual: number = 0;
-  public responseRequest!: ResponseRequest;
+  public mostrarModal: boolean[] = [false, false, false];
+  public modal = {
+    titulo: "",
+    contenido: ""
+  }
 
-  constructor(protected clienteService: ClienteService){}
+
+  constructor(){}
 
   ngOnInit(): void {
 
   }
 
+
+  public abrirModal(idModal: number){
+    switch (idModal) {
+      case 1:
+        this.mostrarModal = [true, false, false];
+        break;
+      case 2:
+        this.mostrarModal = [false, true, false];
+        break;
+      case 3:
+        this.mostrarModal = [false, false, true];
+        break;
+      default:
+        break;
+    }
+  }
+
+  public cerrarModal(){
+    this.mostrarModal = [false, false, false];
+  }
 
 
 

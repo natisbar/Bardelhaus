@@ -1,88 +1,120 @@
 
 <section id="contactar">
     <h2 class="titulo">Contacto</h2>
-    <form id="form-aplicacion" *ngIf="mostrarForm" [formGroup]="formAplicacion" #myForm="ngForm" (ngSubmit)="iniciarPeticionPost()">
-      <!-- style="display: none;" -->
-      <div style="display: none;" class="input-aplicacion">
-        <label for="id">ID Oferta: </label>
-        <input type="text" id="id" name="id" formControlName="id">
-      </div>
-      <div class="input-aplicacion">
-        <label for="email">Email: </label>
-        <input
-          type="email"
-          name="email"
-          formControlName="email"
-          [class.is-valid]="emailField!.valid"
-          [class.is-invalid]="emailField!.touched && !emailField!.valid">
-        <div class="mensaje-error" *ngIf="!emailField!.valid  && (emailField!.dirty || emailField!.touched)">
-          <div *ngIf="emailField!.errors?.['required']">
-            *Este campo es requerido
-          </div>
-          <div *ngIf="emailField!.errors?.['email']">
-            *El email no es válido.
-          </div>
-        </div>
-      </div>
+    <div class="contenedor-form">
+      <form id="form-aplicacion" *ngIf="mostrarForm" [formGroup]="formAplicacion" #myForm="ngForm" (ngSubmit)="iniciarPeticionPost()">
 
-      <div class="input-aplicacion">
-        <label for="cedula">Cédula: </label>
-        <input
-          type="number"
-          name="cedula"
-          formControlName="cedula"
-          [class.is-valid]="cedulaField!.valid"
-          [class.is-invalid]="cedulaField!.touched && !cedulaField!.valid">
-        <div class="mensaje-error" *ngIf="!cedulaField!.valid  && (cedulaField!.dirty || cedulaField!.touched)">
-          <div *ngIf="cedulaField!.errors?.['required']">
-            *Este campo es requerido
-          </div>
-          <div *ngIf="cedulaField!.errors?.['min']">
-            *La cédula debe tener al menos 6 digitos.
+        <div class="input-text">
+          <label for="nombre">Nombre: </label>
+          <input
+            type="text"
+            name="nombre"
+            formControlName="nombre"
+            [class.is-valid]="nombreField!.valid"
+            [class.is-invalid]="nombreField!.touched && !nombreField!.valid">
+          <div class="mensaje-error" *ngIf="!nombreField!.valid  && (nombreField!.dirty || nombreField!.touched)">
+            <div *ngIf="nombreField!.errors?.['required']">
+              *Este campo es requerido
+            </div>
+            <div *ngIf="nombreField!.errors?.['stringValid']">
+              *El nombre no debe tener caracteres especiales ni numeros.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="input-aplicacion">
-        <label for="nombre">Nombre: </label>
-        <input
-          type="text"
-          name="nombre"
-          formControlName="nombre"
-          [class.is-valid]="nombreField!.valid"
-          [class.is-invalid]="nombreField!.touched && !nombreField!.valid">
-        <div class="mensaje-error" *ngIf="!nombreField!.valid  && (nombreField!.dirty || nombreField!.touched)">
-          <div *ngIf="nombreField!.errors?.['required']">
-            *Este campo es requerido
-          </div>
-          <div *ngIf="nombreField!.errors?.['stringValid']">
-            *El nombre no debe tener caracteres especiales ni numeros.
+        <div class="input-text">
+          <label for="telefono">Teléfono: </label>
+          <input
+            type="number"
+            name="telefono"
+            formControlName="telefono"
+            [class.is-valid]="telefonoField!.valid"
+            [class.is-invalid]="telefonoField!.touched && !telefonoField!.valid">
+          <div class="mensaje-error" *ngIf="!telefonoField!.valid  && (telefonoField!.dirty || telefonoField!.touched)">
+            <div *ngIf="telefonoField!.errors?.['required']">
+              *Este campo es requerido
+            </div>
+            <div *ngIf="telefonoField!.errors?.['min']">
+              *El número debe tener 10 digitos.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="input-aplicacion">
-        <label for="telefono">Teléfono: </label>
-        <input
-          type="number"
-          name="telefono"
-          formControlName="telefono"
-          [class.is-valid]="telefonoField!.valid"
-          [class.is-invalid]="telefonoField!.touched && !telefonoField!.valid">
-        <div class="mensaje-error" *ngIf="!telefonoField!.valid  && (telefonoField!.dirty || telefonoField!.touched)">
-          <div *ngIf="telefonoField!.errors?.['required']">
-            *Este campo es requerido
-          </div>
-          <div *ngIf="telefonoField!.errors?.['min']">
-            *El número debe tener 10 digitos.
+        <div class="input-text">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            formControlName="email"
+            [class.is-valid]="emailField!.valid"
+            [class.is-invalid]="emailField!.touched && !emailField!.valid">
+          <div class="mensaje-error" *ngIf="!emailField!.valid  && (emailField!.dirty || emailField!.touched)">
+            <div *ngIf="emailField!.errors?.['required']">
+              *Este campo es requerido
+            </div>
+            <div *ngIf="emailField!.errors?.['email']">
+              *El email no es válido.
+            </div>
           </div>
         </div>
-      </div>
-      <div class="input-aplicacion" style="align-content:center;">
-        <input type="submit" value="Enviar" class="boton-submit">
-      </div>
-    </form>
+
+        <p>Por donde desea ser contactado: </p>
+        <div class="contenedor-input-radio">
+          <div class="input-radio">
+            <label for="medioPreferido">Email: </label>
+            <input
+              type="radio"
+              name="medioPreferido"
+              formControlName="medioPreferido"
+              [value]="'EMAIL'">
+              <!-- [class.is-valid]="medioPreferidoField!.valid"
+              [class.is-invalid]="medioPreferidoField!.touched && !medioPreferidoField!.valid"> -->
+            <!-- <div class="mensaje-error" *ngIf="!medioPreferidoField!.valid  && (medioPreferidoField!.dirty || medioPreferidoField!.touched)">
+              <div *ngIf="medioPreferidoField!.errors?.['required']">
+                *Este campo es requerido
+              </div>
+            </div> -->
+          </div>
+
+          <div class="input-radio">
+            <label for="medioPreferido">Teléfono</label>
+            <input
+              type="radio"
+              name="medioPreferido"
+              formControlName="medioPreferido"
+              [value]="'TELEFONO'">
+              <!-- [class.is-valid]="medioPreferidoField!.valid"
+              [class.is-invalid]="medioPreferidoField!.touched && !medioPreferidoField!.valid"> -->
+            <!-- <div class="mensaje-error" *ngIf="!medioPreferidoField!.valid  && (medioPreferidoField!.dirty || medioPreferidoField!.touched)">
+              <div *ngIf="medioPreferidoField!.errors?.['required']">
+                *Este campo es requerido
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="input-text">
+          <label for="mensaje">Mensaje: </label>
+          <textarea rows="5"
+                    cols="40"
+                    formControlName="mensaje"
+                    [class.is-valid]="mensajeField!.valid"
+                    [class.is-invalid]="mensajeField!.touched && !mensajeField!.valid">
+          </textarea>
+          <div class="mensaje-error" *ngIf="!mensajeField!.valid  && (mensajeField!.dirty || mensajeField!.touched)">
+            <div *ngIf="mensajeField!.errors?.['required']">
+              *Este campo es requerido
+            </div>
+          </div>
+        </div>
+
+
+        <div class="center-items">
+          <input type="submit" value="Enviar" class="btn-principal">
+        </div>
+      </form>
+    </div>
+
     <h2 *ngIf="!mostrarForm" style="text-align: center;">Respuesta guardada</h2>
-
 
 </section>

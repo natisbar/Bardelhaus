@@ -19,22 +19,142 @@
         </div>
     </div>
 
-
+    <div class="proyecto">
+      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
+      <div class="contenedor-img">
+        <figure>
+          <img src="./assets/image/proyectos/cursog.png" alt="">
+        </figure>
+      </div>
+      <div class="descripcion">
+        <p>Marketplace de cursos:</p>
+        <p><i>Inandina</i></p>
+      </div>
+      <div class="informacion">
+        <a class="btn-principal" target="_blank" (click)="abrirModal(1)">Ver mas</a>
+      </div>
+    </div>
 
     <div class="proyecto">
       <!-- *ngFor = "let servicio of servicios; let i = index"> -->
       <div class="contenedor-img">
         <figure>
-          <img src="" alt="">
+          <img src="./assets/image/proyectos/cursog.png" alt="">
         </figure>
       </div>
-      <div class="nombre">
-        <p></p>
+      <div class="descripcion">
+        <p>Curso autodirigido con bot:</p>
+        <p><i>WTech/UNAD</i></p>
+      </div>
+      <div class="informacion">
+        <a class="btn-principal" target="_blank" href="">Ver mas</a>
+      </div>
+    </div>
+
+    <div class="proyecto">
+      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
+      <div class="contenedor-img">
+        <figure>
+          <img src="./assets/image/proyectos/cursog.png" alt="">
+        </figure>
       </div>
       <div class="descripcion">
-        <p></p>
+        <p>Diseño instruccional:</p>
+        <p><i>LinkTIC/CPE</i></p>
       </div>
-  </div>
+      <div class="informacion">
+        <a class="btn-principal" target="_blank" (click)="abrirModal(3)">Ver mas</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
+
+
+<div id="myModal1" class="modal"  [style]="(mostrarModal[0])?'display: block':'display: none'" >
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Marketplace de cursos: Inandina</h2>
+    </div>
+
+    <div class="modal-body">
+      <p>
+        Para este proyecto se evaluó y definió la mejor plataforma a usar de acuerdo con el nuevo modelo de Marketplace de cursos,
+        algunas de las tareas desarrolladas fueron:
+      </p>
+      <ol>
+        <li>
+          Se integra la web de Inandina con Moodle, de modo que al generarse una compra a través de esta, se matriculase automaticamente el usuario al curso.
+        </li>
+        <li>
+          Se diseña y monta la estructura de los cursos autodirigidos en Moodle.
+        </li>
+        <li>
+          Se diseña e implementa bloque de configuración automática para los recursos de moodle.
+          Nota: Actualmente tiene mejoras y se encuentra en un  <a target="_blank" href="https://github.com/natisbar/Block_configuration_moodle">repositorio de github</a>
+        </li>
+        <li>
+          Generación automática de certificados con QR después de finalizado el curso.
+        </li>
+        <li>
+          Espacio para validar autenticidad de certificado.
+        </li>
+      </ol>
+      <div class="informacion">
+        <a class="btn-principal" target="_blank" href="./assets/pdf/proyectos/marketplace.pdf">Imágenes</a>
+      </div>
+
+
+    </div>
+    <!-- <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div> -->
+  </div>
+</div>
+
+
+<div id="myModal3" class="modal"  [style]="(mostrarModal[2])?'display: block':'display: none'" >
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Diseño instruccional: LinkTIC/CPE</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <p>Diseño microcurricular e instruccional de tres (3) cursos virtuales online y offline de 12 horas.
+        Las temáticas de los cursos fueron las siguientes: 1. Domótica 2. Alfabetización digital 3. Océanos y recursos hidrobiológicos.
+      </p>
+      <p>
+        Algunas de las tareas desarrolladas fueron:
+      </p>
+      <ol>
+        <li>
+          Diseño malla curricular, ficha ténica del curso y guía didáctica.
+        </li>
+        <li>
+          Diligenciamiento de guiones de acuerdo con propuesta de malla.
+        </li>
+        <li>
+          Generar cuestionarios para los tres (3) módulos de contenido y evaluación final.
+        </li>
+        <li>
+          Definir cuatro (4) retos (parte práctica) con su respectiva guía.
+        </li>
+      </ol>
+      <div class="contenedor-img-modal">
+        <img src="./assets/image/proyectos/instruccional/instruccional.png" alt="">
+      </div>
+      <div class="informacion">
+        <a class="btn-principal" target="_blank" href="./assets/pdf/proyectos/instruccional.pdf">Imágenes</a>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

@@ -47,7 +47,7 @@
         <p><i>WTech/UNAD</i></p>
       </div>
       <div class="informacion">
-        <a class="btn-principal" target="_blank" href="">Ver mas</a>
+        <a class="btn-principal" target="_blank" (click)="abrirModal(2)">Ver mas</a>
       </div>
     </div>
 
@@ -94,7 +94,7 @@
         </li>
         <li>
           Se diseña e implementa bloque de configuración automática para los recursos de moodle.
-          Nota: Actualmente tiene mejoras y se encuentra en un  <a target="_blank" href="https://github.com/natisbar/Block_configuration_moodle">repositorio de github</a>
+          <p><b>Nota: </b>Este desarrollo se reestructuró y se encuentra en un  <a target="_blank" href="https://github.com/natisbar/Block_configuration_moodle">repositorio de github</a></p>
         </li>
         <li>
           Generación automática de certificados con QR después de finalizado el curso.
@@ -116,6 +116,34 @@
 </div>
 
 
+<div id="myModal2" class="modal"  [style]="(mostrarModal[1])?'display: block':'display: none'" >
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Curso autodirigido con bot: WTech/UNAD</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <p>
+        Para este proyecto se diseño una propuesta de estructura para un curso automatizado,
+        manteniendo la línea de la estructura utilizada en los cursos actuales de la UNAD.
+        Además, se ha implementado y configurado el curso automatizado, y se ha integrado
+        exitosamente un chatbot dentro del mismo que saluda de manera personalizada, y es capaz
+        de resolver preguntas relacionadas con el curso y proporcionar las rutas a algunos
+        espacios al interior del curso.
+      </p>
+      <div class="contenedor-img-modal">
+        <img src="./assets/image/proyectos/curso_bot/curso_bot.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 <div id="myModal3" class="modal"  [style]="(mostrarModal[2])?'display: block':'display: none'" >
   <!-- Modal content -->
   <div class="modal-content">
@@ -126,8 +154,10 @@
 
     <div class="modal-body">
 
-      <p>Diseño microcurricular e instruccional de tres (3) cursos virtuales online y offline de 12 horas.
-        Las temáticas de los cursos fueron las siguientes: 1. Domótica 2. Alfabetización digital 3. Océanos y recursos hidrobiológicos.
+      <p>Para este proyecto se hizo el diseño microcurricular e instruccional de
+        tres (3) cursos virtuales online y offline con una duración de 12 horas cada uno.
+        Los temas abordados en estos cursos son: 1. Domótica 2. Alfabetización digital 3.
+        Océanos y recursos hidrobiológicos.
       </p>
       <p>
         Algunas de las tareas desarrolladas fueron:

@@ -1,3 +1,3 @@
 export const environmentForm = {
-  endpoint: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeJy6DEOzN5eSZB8srDtGoltmmmaYJh1UIrID_tPj99asTwAw/formResponse",
+  endpoint: "https://docs.google.com/forms/d/e/1FAIpQLSddPg6Co-J-1pExsKNHlPE-ORyGZpxwjDazJ04rGE_-AezvGA/formResponse",
 }

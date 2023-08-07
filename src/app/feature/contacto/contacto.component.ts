@@ -25,11 +25,11 @@ export class ContactoComponent {
 
     if (this.formAplicacion.valid){
       const body = new URLSearchParams();
-      body.set('entry.273303349', this.formAplicacion.value.nombre);
-      body.set('entry.857158303', this.formAplicacion.value.email);
-      body.set('entry.228355037', this.formAplicacion.value.telefono);
-      body.set('entry.484913548', this.formAplicacion.value.medioPreferido);
-      body.set('entry.454607529', this.formAplicacion.value.mensaje);
+      body.set('entry.792602600', this.formAplicacion.value.nombre);
+      body.set('entry.1391419423', this.formAplicacion.value.email);
+      body.set('entry.417843217', this.formAplicacion.value.telefono);
+      body.set('entry.866507764', this.formAplicacion.value.medioPreferido);
+      body.set('entry.121487989', this.formAplicacion.value.mensaje);
       let options = {
         headers: new HttpHeaders().set(
           'Content-Type',
@@ -43,16 +43,20 @@ export class ContactoComponent {
             console.log(data);
           },
           error: error =>{
-            console.log(error);
-            // this.mostrarForm = false;
+            console.log(error.message);
+            this.mostrarModal = true;
+            this.limpiarFormulario();
           }
         })
       } catch (error) {
-        console.log("hubo error");
         console.log(error);
       }
 
     }
+  }
+
+  private limpiarFormulario(){
+    this.formAplicacion.reset();
   }
 
   public abrirModal(idModal: number){

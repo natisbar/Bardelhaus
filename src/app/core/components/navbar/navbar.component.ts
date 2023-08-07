@@ -24,10 +24,10 @@ export class NavbarComponent implements OnInit{
     let ubicacionActual = window.location.href;
     console.log(ubicacionActual)
     if (ubicacionActual.indexOf("localhost") > 0 || ubicacionActual.indexOf("127.0.0.1") > 0){
-      this.imageToolbar = '../../../assets/image/jesval_logo.png';
+      this.imageToolbar = '../../../assets/image/bardelhaus_logo.png';
     }
     else {
-      this.imageToolbar = "assets/image/jesval_logo.png";
+      this.imageToolbar = "assets/image/bardelhaus_logo.png";
     }
   }
 

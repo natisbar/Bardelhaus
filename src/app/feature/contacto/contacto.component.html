@@ -67,13 +67,6 @@
               name="medioPreferido"
               formControlName="medioPreferido"
               [value]="'EMAIL'">
-              <!-- [class.is-valid]="medioPreferidoField!.valid"
-              [class.is-invalid]="medioPreferidoField!.touched && !medioPreferidoField!.valid"> -->
-            <!-- <div class="mensaje-error" *ngIf="!medioPreferidoField!.valid  && (medioPreferidoField!.dirty || medioPreferidoField!.touched)">
-              <div *ngIf="medioPreferidoField!.errors?.['required']">
-                *Este campo es requerido
-              </div>
-            </div> -->
           </div>
 
           <div class="input-radio">
@@ -83,13 +76,6 @@
               name="medioPreferido"
               formControlName="medioPreferido"
               [value]="'TELEFONO'">
-              <!-- [class.is-valid]="medioPreferidoField!.valid"
-              [class.is-invalid]="medioPreferidoField!.touched && !medioPreferidoField!.valid"> -->
-            <!-- <div class="mensaje-error" *ngIf="!medioPreferidoField!.valid  && (medioPreferidoField!.dirty || medioPreferidoField!.touched)">
-              <div *ngIf="medioPreferidoField!.errors?.['required']">
-                *Este campo es requerido
-              </div>
-            </div> -->
           </div>
         </div>
 
@@ -121,15 +107,14 @@
 
 
 <div id="myModal" class="modal"  [style]="(mostrarModal)?'display: block':'display: none'" >
-  <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close" (click)="cerrarModal()">&times;</span>
-      <h2>Marketplace de cursos: Inandina</h2>
+      <h2>Envio de formulario</h2>
     </div>
 
     <div class="modal-body">
-      <p>hola mundo</p>
+      <p>El formulario ha sido enviado satisfactoriamente. Nos estaremos comunicando pronto.</p>
     </div>
   </div>
 </div>

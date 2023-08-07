@@ -7,8 +7,8 @@ export class HttpgeneralService {
 
   constructor(public http: HttpClient) {}
 
-  public doPost(endpoint: string, apiRoute: string, body: any){
-    return this.http.post(`${endpoint + apiRoute}`, body, {headers: this.getHttpHeaders()})
+  public doPost(endpoint: string, body: any,  options?: any){
+    return this.http.post<any>(endpoint, body, options);
   }
 
   public doGet<T>(url: string, data: any){

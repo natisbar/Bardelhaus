@@ -118,3 +118,18 @@
     <h2 *ngIf="!mostrarForm" style="text-align: center;">Respuesta guardada</h2>
 
 </section>
+
+
+<div id="myModal" class="modal"  [style]="(mostrarModal)?'display: block':'display: none'" >
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Marketplace de cursos: Inandina</h2>
+    </div>
+
+    <div class="modal-body">
+      <p>hola mundo</p>
+    </div>
+  </div>
+</div>

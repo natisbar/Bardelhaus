@@ -14,6 +14,7 @@ export class ContactoComponent {
   public isActive: string;
   public formAplicacion: FormGroup;
   public mostrarForm: boolean = true;
+  public mostrarModal: boolean = false;
 
   constructor(protected contactarService: ContactarService){
 
@@ -34,10 +35,6 @@ export class ContactoComponent {
           'Content-Type',
           'application/x-www-form-urlencoded'
         )
-        // params: new HttpParams().set(
-        //   'key',
-        //   environmentForm.key
-        // )
       };
 
       try {
@@ -56,7 +53,14 @@ export class ContactoComponent {
       }
 
     }
+  }
 
+  public abrirModal(idModal: number){
+    this.mostrarModal = true;
+  }
+
+  public cerrarModal(){
+    this.mostrarModal = false
   }
 
   public construirFormulario(){

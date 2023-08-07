@@ -15,8 +15,11 @@ nav {
 }
 
 .navp-brand img{
-  width: 90px;
+  width: 130px;
   /* height: 80px; */
+}
+.navp-brand a{
+  padding: 1rem;
 }
 
 .navp-item{

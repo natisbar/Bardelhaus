@@ -57,6 +57,10 @@
   margin-right: 3rem;
 }
 
+.input-radio label{
+  margin-right: 0.5rem;
+}
+
 .input-text {
   display: flex;
   flex-wrap: wrap;

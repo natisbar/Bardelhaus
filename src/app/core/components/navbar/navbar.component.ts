@@ -1,6 +1,9 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { DOCUMENT} from '@angular/common';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MenuItem } from '../../models/menuItems';
+// import { trigger, style, animate, transition, state } from '@angular/animations';
+import { PageScrollService } from 'ngx-page-scroll-core';
+
 
 @Component({
   selector: 'app-navbar',
@@ -13,12 +16,16 @@ export class NavbarComponent implements OnInit{
   items: MenuItem[];
   imageToolbar:string;
 
-  constructor(private scroller: ViewportScroller){}
+  constructor(private pageScrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any){}
 
-  public redirigirEnPagina(id:string){
-    this.scroller.scrollToAnchor(id);
+
+  public redirigirEnPagina(id:string): void {
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: id
+    });
   }
-
 
   ngOnInit(){
     let ubicacionActual = window.location.href;

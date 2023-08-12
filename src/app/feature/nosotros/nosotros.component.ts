@@ -1,5 +1,6 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT, ViewportScroller } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { PageScrollService } from 'ngx-page-scroll-core';
 import { Paths } from 'src/app/shared/Utils/paths';
 
 const NOMBRE_IMAGEN = "img_seccion1.jpg";
@@ -12,11 +13,14 @@ const NOMBRE_IMAGEN = "img_seccion1.jpg";
 export class NosotrosComponent implements OnInit {
   public pathImagenes: string;
 
-  constructor(private scroller: ViewportScroller){}
+  constructor(private pageScrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any){}
 
-  public redirigirEnPagina(id:string){
-    console.log(id);
-    this.scroller.scrollToAnchor(id);
+  public redirigirEnPagina(id:string): void {
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: id
+    });
   }
 
   ngOnInit(): void {

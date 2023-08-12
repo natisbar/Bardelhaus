@@ -4,9 +4,10 @@
       <img src="{{imageToolbar}}" alt="Logo de Bardelhaus">
     </a>
   </div>
-  <ul class="navp">
+  <ul class="navp" >
     <li class="navp-item" *ngFor="let item of items; let i as index">
-      <a class="navp-link draw" (click)="redirigirEnPagina(item.idUbicacion)">{{item.nombre}}</a>
+      <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
+        class="navp-link draw">{{item.nombre}}</a>
     </li>
   </ul>
 </nav>

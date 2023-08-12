@@ -8,7 +8,6 @@ import { ServiciosComponent } from './feature/servicios/servicios.component';
 import { ClientesComponent } from './feature/proyectos/proyectos.component';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
 import { ContactoComponent } from './feature/contacto/contacto.component';
 
 const routes: Routes = [

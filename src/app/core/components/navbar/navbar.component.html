@@ -1,10 +1,10 @@
 <nav id="barra-navegacion">
   <div class="navp-brand">
-    <a href="/">
+    <a href="/" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
       <img src="{{imageToolbar}}" alt="Logo de Bardelhaus">
     </a>
   </div>
-  <ul class="navp" >
+  <ul class="navp" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
     <li class="navp-item" *ngFor="let item of items; let i as index">
       <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
         class="navp-link draw">{{item.nombre}}</a>

@@ -1,5 +1,6 @@
 
 <section id="contacto">
+  <div data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
     <h2 class="titulo">Contacto</h2>
     <div class="contenedor-form">
       <form id="form-aplicacion" *ngIf="mostrarForm" [formGroup]="formAplicacion" #myForm="ngForm" (ngSubmit)="iniciarPeticionPost()">
@@ -102,7 +103,7 @@
     </div>
 
     <h2 *ngIf="!mostrarForm" style="text-align: center;">Respuesta guardada</h2>
-
+  </div>
 </section>
 
 

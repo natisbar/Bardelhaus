@@ -2,6 +2,7 @@ import { DOCUMENT, ViewportScroller } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { PageScrollService } from 'ngx-page-scroll-core';
 import { Paths } from 'src/app/shared/Utils/paths';
+import AOS from "aos";
 
 const NOMBRE_IMAGEN = "img_seccion1.jpg";
 
@@ -24,6 +25,7 @@ export class NosotrosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
     this.pathImagenes = Paths.identificarPathImagenes(2) + NOMBRE_IMAGEN;
   }
 }

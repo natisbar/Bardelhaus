@@ -1,7 +1,6 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Servicio } from '../shared/model/servicio';
-
+import AOS from "aos";
 
 const SERVICIOS: Servicio[] = [
   {
@@ -30,10 +29,7 @@ export class ServiciosComponent implements OnInit {
 
   public servicios: Servicio[] = SERVICIOS;
 
-
-  constructor(private scroller: ViewportScroller){
-  }
-
   ngOnInit(): void {
+    AOS.init();
   }
 }

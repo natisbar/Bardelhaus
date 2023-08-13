@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseRequest } from 'src/app/shared/models/responseRequest';
 import { ProyectoWeb } from '../shared/model/proyectoWeb';
+import AOS from "aos";
 
 const DESARROLLO_WEB: ProyectoWeb[] = [
   {
@@ -42,7 +42,7 @@ export class ClientesComponent implements OnInit{
   constructor(){}
 
   ngOnInit(): void {
-
+    AOS.init();
   }
 
 

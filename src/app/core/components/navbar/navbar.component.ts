@@ -1,7 +1,7 @@
 import { DOCUMENT} from '@angular/common';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MenuItem } from '../../models/menuItems';
-// import { trigger, style, animate, transition, state } from '@angular/animations';
+import AOS from "aos";
 import { PageScrollService } from 'ngx-page-scroll-core';
 
 
@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit{
   }
 
   ngOnInit(){
+    AOS.init();
     let ubicacionActual = window.location.href;
     console.log(ubicacionActual)
     if (ubicacionActual.indexOf("localhost") > 0 || ubicacionActual.indexOf("127.0.0.1") > 0){

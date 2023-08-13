@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { regularCharacterValidator } from 'src/app/shared/Utils/validadores/form.validacion';
 import { ContactarService } from 'src/app/shared/service/contactar.service';
 import { environmentForm } from 'src/environments/environment';
+import AOS from "aos";
 
 @Component({
   selector: 'app-contacto',
@@ -86,6 +87,7 @@ export class ContactoComponent {
 
 
   ngOnInit(){
+    AOS.init();
     this.construirFormulario();
   }
 

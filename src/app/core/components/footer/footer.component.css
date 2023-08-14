@@ -1,34 +1,39 @@
 footer{
-  background-color: #000000;
+  background-color: white;
+  /* border-top: solid 2px black; */
 }
 
 .fila{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  color: white;
-  border-bottom: solid 1px white;
+  padding: 1rem 5rem;
+  color: black;
+  /* border-bottom: solid 1px white; */
 }
 
 .redes-sociales, .derechos{
   display: flex;
   align-items: center;
+  font-size: 0.8rem;
   /* justify-content: space-between; */
+}
+
+.redes-sociales{
+  font-size: 1.7rem;
 }
 
 .redes-sociales a{
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 0 0.5rem;
 }
 
 .redes-sociales a:hover{
-  color: #b95e9c;
-  background-color: white;
+  color: white;
+  background-color: black;
   border-radius: 20px;
 }
-
 
 .diseno{
   padding: 1rem 0;
@@ -45,7 +50,8 @@ footer{
 }
 
 .logo img{
-  width: 110px;
+  width: 100px;
+  margin-right: 1rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -54,18 +60,29 @@ footer{
     flex-direction: column;
     align-items: center;
   }
-  .logo{
-    order: 1;
-  }
-  .logo img{
-    width: 50px;
-  }
-  .redes-sociales{
-    order: 2;
+  .logo .derechos{
+    /* padding-top: 0.5rem; */
+    text-align: center;
   }
 
-  .derechos{
-    order: 3;
-    padding-top: 0.5rem;
+  .logo figure{
+    margin: auto;
+  }
+
+  .logo img{
+    width: 70px;
+    margin-right: 0;
+  }
+
+  .redes-sociales{
+    padding-top: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 1256px) {
+  .fila{
+    /* justify-content:center; */
+    padding: 1rem 22%;
+    justify-content: none;
   }
 }

@@ -198,3 +198,9 @@ img {
     padding: 2rem 2rem;
   }
 }
+
+@media screen and (min-width: 1256px) {
+  #proyectos{
+    padding: 2rem 15% 2rem 15%;
+  }
+}

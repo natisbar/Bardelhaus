@@ -3,11 +3,19 @@
     <a href="/" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
       <img src="{{imageToolbar}}" alt="Logo de Bardelhaus">
     </a>
+    <ul class="navp" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+      <li class="navp-item"
+          *ngFor="let item of itemsRegulares; let i as index">
+        <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
+          class="navp-link"
+          *ngIf="item.nombre != 'Contacto'">{{item.nombre}}</a>
+      </li>
+    </ul>
   </div>
   <ul class="navp" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
-    <li class="navp-item" *ngFor="let item of items; let i as index">
+    <li class="navp-item" *ngFor="let item of itemsImportante; let i as index">
       <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
-        class="navp-link draw">{{item.nombre}}</a>
+        [className]="item.nombre == 'Contacto'?'importante':'navp-link'">{{item.nombre}}</a>
     </li>
   </ul>
 </nav>

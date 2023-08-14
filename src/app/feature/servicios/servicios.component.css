@@ -190,4 +190,10 @@
   }
 }
 
+@media screen and (min-width: 1256px) {
+  #servicios{
+    padding: 2rem 15% 2rem 15%;
+  }
+}
+
 

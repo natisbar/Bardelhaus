@@ -57,7 +57,9 @@ img {
   background-color: white;
   padding: 0.6rem 0.8rem;
   margin: auto;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40%;
   min-height: 100px;
   border-radius: 80px;
@@ -98,7 +100,7 @@ img {
   display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 130px; /* Location of the box */
+  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -106,6 +108,7 @@ img {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 500;
 }
 
 /* Modal Content */

@@ -9,7 +9,7 @@ nav {
   position: fixed;
   top: 0; /* Asegura que el nav quede en la parte superior */
   width: 100%; /* Opcional, para asegurarse de que el nav ocupe todo el ancho */
-  z-index: 1000; /* Opcional, para controlar la posición en la pila */
+  z-index: 500; /* Opcional, para controlar la posición en la pila */
 }
 
 .navp, .navp-brand{

@@ -4,19 +4,19 @@ import AOS from "aos";
 
 const DESARROLLO_WEB: ProyectoWeb[] = [
   {
-    img: "./assets/image/proyectos/webg.png",
+    img: "./assets/image/proyectos/jesval.png",
     tipo: "Landing page:",
     descripcion: "Jesvalstore",
     url: "https://jesvalstore.com"
   },
   {
-    img: "./assets/image/proyectos/webg.png",
+    img: "./assets/image/proyectos/construmn.png",
     tipo: "Landing page:",
     descripcion: "Construm Caceres",
     url: "https://www.espaciosconstrumcaceres.com"
   },
   {
-    img: "./assets/image/proyectos/webg.png",
+    img: "./assets/image/proyectos/unad.png",
     tipo: "Web page",
     descripcion: "Egresados UNAD",
     url: "https://egresados-unad.site"

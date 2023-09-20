@@ -9,6 +9,7 @@ import { ClientesComponent } from './feature/proyectos/proyectos.component';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { ContactoComponent } from './feature/contacto/contacto.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routerOptions: ExtraOptions ={
   imports: [
     BrowserModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   exports: [
     NosotrosComponent

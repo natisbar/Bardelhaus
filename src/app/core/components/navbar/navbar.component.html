@@ -3,7 +3,7 @@
     <a href="/" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
       <img src="{{imageToolbar}}" alt="Logo de Bardelhaus">
     </a>
-    <ul class="navp" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+    <ul class="navp menu-desktop" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
       <li class="navp-item"
           *ngFor="let item of itemsRegulares; let i as index">
         <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
@@ -12,10 +12,21 @@
       </li>
     </ul>
   </div>
-  <ul class="navp" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+  <ul class="navp menu-desktop" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
     <li class="navp-item" *ngFor="let item of itemsImportante; let i as index">
       <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
         [className]="item.nombre == 'Contacto'?'importante':'navp-link'">{{item.nombre}}</a>
     </li>
+  </ul>
+  <ul class="navp menu-mobile" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+    <button mat-icon-button [matMenuTriggerFor]="menuHamburguer" aria-label="Example icon-button with a menu">
+      <mat-icon class="icon-display">menu</mat-icon>
+    </button>
+    <mat-menu #menuHamburguer="matMenu">
+      <ng-container *ngFor="let item of itemsRegulares; let i = index">
+        <button mat-menu-item (click)="redirigirEnPagina('#' + item.idUbicacion)">{{item.nombre}}</button>
+      </ng-container>
+      <button mat-menu-item (click)="redirigirEnPagina('#' + 'contacto')">Contacto</button>
+    </mat-menu>
   </ul>
 </nav>

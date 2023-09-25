@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalNotificaciones } from "./services/modal.services";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule
   ],
   providers: [
-    HttpgeneralService
+    HttpgeneralService,
+    ModalNotificaciones
   ]
 })
 export class CoreModule {}

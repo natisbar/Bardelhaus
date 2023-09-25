@@ -5,6 +5,13 @@ import { regularCharacterValidator } from 'src/app/shared/Utils/validadores/form
 import { ContactarService } from 'src/app/shared/service/contactar.service';
 import { environmentForm } from 'src/environments/environment';
 import AOS from "aos";
+import { SweetAlertIcon } from 'sweetalert2';
+import { ModalNotificaciones } from 'src/app/core/services/modal.services';
+
+const SATISFACTORIO_ICON: SweetAlertIcon = 'success';
+const ERROR_ICON: SweetAlertIcon = 'error';
+const SOLICITUD_EXITOSA: string = 'Tu mensaje ha sido enviada exitosamente.';
+const INFORMACION_INCOMPLETA: string = 'Por favor diligencie todos los campos marcados como obligatorios.';
 
 @Component({
   selector: 'app-contacto',
@@ -15,9 +22,9 @@ export class ContactoComponent {
   public isActive: string;
   public formAplicacion: FormGroup;
   public mostrarForm: boolean = true;
-  public mostrarModal: boolean = false;
 
-  constructor(protected contactarService: ContactarService){
+  constructor(protected contactarService: ContactarService,
+              private modalNotificaciones: ModalNotificaciones){
 
   }
   async iniciarPeticionPost(){
@@ -45,8 +52,8 @@ export class ContactoComponent {
           },
           error: error =>{
             console.log(error.message);
-            this.mostrarModal = true;
             this.limpiarFormulario();
+            this.modalNotificaciones.modalBasico(SATISFACTORIO_ICON, SOLICITUD_EXITOSA)
           }
         })
       } catch (error) {
@@ -54,18 +61,13 @@ export class ContactoComponent {
       }
 
     }
+    else{
+      this.modalNotificaciones.modalBasico(ERROR_ICON, INFORMACION_INCOMPLETA);
+    }
   }
 
   private limpiarFormulario(){
     this.formAplicacion.reset();
-  }
-
-  public abrirModal(idModal: number){
-    this.mostrarModal = true;
-  }
-
-  public cerrarModal(){
-    this.mostrarModal = false
   }
 
   public construirFormulario(){

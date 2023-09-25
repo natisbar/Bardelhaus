@@ -5,7 +5,7 @@ export class ModalNotificaciones {
   icono: SweetAlertIcon;
   imageUrl: string;
   texto: string;
-  confirmButtonColor: string = '#28ae60';
+  confirmButtonColor: string = 'black';
 
   public modalBasico(icono: SweetAlertIcon, texto: string) {
     // this.titulo = titulo;

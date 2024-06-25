@@ -22,7 +22,9 @@
       <ng-container *ngFor="let item of itemsRegulares; let i = index">
         <button mat-menu-item (click)="redirigirEnPagina('#' + item.idUbicacion)">{{item.nombre}}</button>
       </ng-container>
-      <button mat-menu-item (click)="redirigirEnPagina('#contacto')">Contacto</button>
+      <ng-container *ngFor="let item of itemsImportante; let i = index">
+        <button mat-menu-item (click)="redirigirEnPagina('#' + item.idUbicacion)">{{item.nombre}}</button>
+      </ng-container>
     </mat-menu>
   </ul>
   <div class="toggle-container">

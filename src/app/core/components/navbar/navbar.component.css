@@ -1,10 +1,19 @@
+/* Asegura que el contenedor del toggle esté alineado con el navbar */
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-container span{
+  font-size: 1.5em;
+}
 nav {
   /* background-color: #fcdada; */
   display: flex;
   background-color: white;
   border-bottom: solid 3px black;
   padding: 0.1rem 3rem;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   position: fixed;
   top: 0; /* Asegura que el nav quede en la parte superior */
@@ -12,55 +21,56 @@ nav {
   z-index: 500; /* Opcional, para controlar la posición en la pila */
 }
 
-.navp, .navp-brand{
+.navp, .navp-brand {
   display: flex;
   list-style: none;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.navp-brand img{
+.navp-brand img {
   width: 100px;
   /* height: 80px; */
 }
-/* .navp-brand a{
+
+/* .navp-brand a {
   padding: 1rem;
 } */
 
-.navp-item{
+.navp-item {
   margin: 0;
 }
 
-.navp-link{
+.navp-link {
   color: black;
   /* border-radius: 10px; */
   display: flex;
   text-decoration: none;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   padding: 1rem;
   cursor: pointer;
   /* border-bottom: solid 2px white; */
   /* border-left: solid 2px white; */
 }
 
-.importante{
+.importante {
   color: white;
   border-radius: 10px;
   display: flex;
   text-decoration: none;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   padding: 1rem;
   cursor: pointer;
   border: solid 2px black;
   background-color: black;
 }
 
-.importante:hover{
+.importante:hover {
   color: black;
   background-color: white;
 }
 
-.navp-link:hover{
+.navp-link:hover {
   /* background-color: #f3e7f3; */
   color: #edf0f4;
   /* font-weight: bold; */
@@ -75,57 +85,57 @@ nav {
      1px  1px 0 #000; /* Sombra inferior derecha */
 }
 
-.menu-mobile{
+.menu-mobile {
   display: none;
 }
 
-::ng-deep .mat-mdc-menu-content, ::ng-deep .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text{
+::ng-deep .mat-mdc-menu-content,
+::ng-deep .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
   font-size: 1.2rem;
 }
 
-
 /* @keyframes border_anim {
-	0%{
-		width: 0%;
-	}
-	100%{
-		width: 100%;
-	}
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
 } */
 
-.navp-brand{
-justify-content: flex-start;
+.navp-brand {
+  justify-content: flex-start;
 }
 
-.icon-display{
+.icon-display {
   transform: scale(1.5);
 }
 
 @media screen and (max-width: 740px) {
-  .menu-mobile{
+  .menu-mobile {
     display: flex;
   }
 
-  .menu-desktop{
+  .menu-desktop {
     display: none;
   }
-  /* .navp-brand img{
+  /* .navp-brand img {
     width: 50px;
   }
-  nav{
-    justify-content:center;
+  nav {
+    justify-content: center;
     padding: 0.5rem 0rem;
     justify-content: none;
   }
 
-  .navp-link, .importante{
-    font-size:1rem;
+  .navp-link, .importante {
+    font-size: 1rem;
   } */
 }
 
 @media screen and (min-width: 1256px) {
-  nav{
-    /* justify-content:center; */
+  nav {
+    /* justify-content: center; */
     padding: 0.5rem 17%;
     justify-content: none;
   }

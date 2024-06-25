@@ -1,190 +1,34 @@
 <section id="proyectos">
   <div class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
-    <h2>Proyectos</h2>
+    <h2>{{projectTitle}}</h2>
   </div>
   <div class="contenedor" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
-    <div class="proyecto"
-        *ngFor = "let proyecto of proyectosWeb; let i = index">
-        <div class="contenedor-img">
-          <figure>
-            <img src="{{proyecto.img}}" alt="">
-          </figure>
-        </div>
-        <div class="descripcion">
-          <p>{{proyecto.tipo}}</p>
-          <p><i>{{proyecto.descripcion}}</i></p>
-        </div>
-        <div class="informacion">
-          <a class="btn-principal" target="_blank" href="{{proyecto.url}}">Ver mas</a>
-        </div>
-    </div>
-
-    <div class="proyecto">
-      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
+    <div class="proyecto" *ngFor="let item of projectItem; let i = index">
       <div class="contenedor-img">
         <figure>
-          <img src="./assets/image/proyectos/inandina.png" alt="">
+          <img [src]="item.imgUrl" alt="">
         </figure>
       </div>
       <div class="descripcion">
-        <p>Marketplace de cursos:</p>
-        <p><i>Inandina</i></p>
+        <p>{{item.projectType}}</p>
+        <p><i>{{item.projectName}}</i></p>
       </div>
       <div class="informacion">
-        <a class="btn-principal" target="_blank" (click)="abrirModal(1)">Ver mas</a>
+        <a class="btn-principal" *ngIf="item.projectUrl; else modalBtn" [href]="item.projectUrl" target="_blank">{{ seeMoreBtn }}</a>
+        <ng-template #modalBtn>
+          <a class="btn-principal" (click)="abrirModal(item.modalId)">{{ seeMoreBtn }}</a>
+        </ng-template>
       </div>
     </div>
-
-    <div class="proyecto">
-      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
-      <div class="contenedor-img">
-        <figure>
-          <img src="./assets/image/proyectos/wtech.png" alt="">
-        </figure>
-      </div>
-      <div class="descripcion">
-        <p>Curso autodirigido con bot:</p>
-        <p><i>WTech/UNAD</i></p>
-      </div>
-      <div class="informacion">
-        <a class="btn-principal" target="_blank" (click)="abrirModal(2)">Ver mas</a>
-      </div>
-    </div>
-
-    <div class="proyecto">
-      <!-- *ngFor = "let servicio of servicios; let i = index"> -->
-      <div class="contenedor-img">
-        <figure>
-          <img src="./assets/image/proyectos/linktic.png" alt="">
-        </figure>
-      </div>
-      <div class="descripcion">
-        <p>Diseño instruccional:</p>
-        <p><i>LinkTIC/CPE</i></p>
-      </div>
-      <div class="informacion">
-        <a class="btn-principal" target="_blank" (click)="abrirModal(3)">Ver mas</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-
-<div id="myModal1" class="modal"  [style]="(mostrarModal[0])?'display: block':'display: none'" >
-  <!-- Modal content -->
+<div *ngFor="let item of projectItem; let i = index" [id]="'myModal' + (i + 1)" class="modal" [style.display]="mostrarModal[i] ? 'block' : 'none'">
   <div class="modal-content">
     <div class="modal-header">
       <span class="close" (click)="cerrarModal()">&times;</span>
-      <h2>Marketplace de cursos: Inandina</h2>
+      <h2>{{item.projectName}}</h2>
     </div>
-
-    <div class="modal-body">
-      <p>
-        Para este proyecto se evaluó y definió la mejor plataforma a usar de acuerdo con el nuevo modelo de Marketplace de cursos,
-        algunas de las tareas desarrolladas fueron:
-      </p>
-      <ol>
-        <li>
-          Se integra la web de Inandina con Moodle, de modo que al generarse una compra a través de esta, se matriculase automaticamente el usuario al curso.
-        </li>
-        <li>
-          Se diseña y monta la estructura de los cursos autodirigidos en Moodle.
-        </li>
-        <li>
-          Se diseña e implementa bloque de configuración automática para los recursos de moodle.
-          <p><b>Nota: </b>Este desarrollo se reestructuró y se encuentra en un  <a target="_blank" href="https://github.com/natisbar/Block_configuration_moodle">repositorio de github</a></p>
-        </li>
-        <li>
-          Generación automática de certificados con QR después de finalizado el curso.
-        </li>
-        <li>
-          Espacio para validar autenticidad de certificado.
-        </li>
-      </ol>
-      <div class="informacion">
-        <a class="btn-principal" target="_blank" href="./assets/pdf/proyectos/marketplace.pdf">Imágenes</a>
-      </div>
-
-
-    </div>
-    <!-- <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div> -->
-  </div>
-</div>
-
-
-<div id="myModal2" class="modal"  [style]="(mostrarModal[1])?'display: block':'display: none'" >
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close" (click)="cerrarModal()">&times;</span>
-      <h2>Curso autodirigido con bot: WTech/UNAD</h2>
-    </div>
-
-    <div class="modal-body">
-
-      <p>
-        Para este proyecto se diseño una propuesta de estructura para un curso automatizado,
-        manteniendo la línea de la estructura utilizada en los cursos actuales de la UNAD.
-        Además, se ha implementado y configurado el curso automatizado, y se ha integrado
-        exitosamente un chatbot dentro del mismo que saluda de manera personalizada, y es capaz
-        de resolver preguntas relacionadas con el curso y proporcionar las rutas a algunos
-        espacios al interior del curso.
-      </p>
-      <div class="contenedor-img-modal">
-        <img src="./assets/image/proyectos/curso_bot/curso_bot.png" alt="">
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-<div id="myModal3" class="modal"  [style]="(mostrarModal[2])?'display: block':'display: none'" >
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close" (click)="cerrarModal()">&times;</span>
-      <h2>Diseño instruccional: LinkTIC/CPE</h2>
-    </div>
-
-    <div class="modal-body">
-
-      <p>Para este proyecto se hizo el diseño microcurricular e instruccional de
-        tres (3) cursos virtuales online y offline con una duración de 12 horas cada uno.
-        Los temas abordados en estos cursos son: 1. Domótica 2. Alfabetización digital 3.
-        Océanos y recursos hidrobiológicos.
-      </p>
-      <p>
-        Algunas de las tareas desarrolladas fueron:
-      </p>
-      <ol>
-        <li>
-          Diseño malla curricular, ficha ténica del curso y guía didáctica.
-        </li>
-        <li>
-          Diligenciamiento de guiones de acuerdo con propuesta de malla.
-        </li>
-        <li>
-          Generar cuestionarios para los tres (3) módulos de contenido y evaluación final.
-        </li>
-        <li>
-          Definir cuatro (4) retos (parte práctica) con su respectiva guía.
-        </li>
-      </ol>
-      <div class="contenedor-img-modal">
-        <img src="./assets/image/proyectos/instruccional/instruccional.png" alt="">
-      </div>
-      <div class="informacion">
-        <a class="btn-principal" target="_blank" href="./assets/pdf/proyectos/instruccional.pdf">Imágenes</a>
-      </div>
-
-
-    </div>
-
+    <div class="modal-body" [innerHTML]="item.modalContent"></div>
   </div>
 </div>

@@ -1,22 +1,21 @@
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 export class ModalNotificaciones {
-  titulo: string;
   icono: SweetAlertIcon;
   imageUrl: string;
   texto: string;
+  btnTxt: string;
   confirmButtonColor: string = 'black';
 
-  public modalBasico(icono: SweetAlertIcon, texto: string) {
-    // this.titulo = titulo;
+  public modalBasico(icono: SweetAlertIcon, texto: string, btn: string) {
     this.icono = icono;
     this.texto = texto;
+    this.btnTxt = btn;
     return Swal.fire({
-      // title: this.titulo,
       icon: this.icono,
       text: this.texto,
       confirmButtonColor: this.confirmButtonColor,
-      confirmButtonText: 'Entendido',
+      confirmButtonText: this.btnTxt,
     }).then((result) => {
       return result;
     });

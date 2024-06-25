@@ -1,10 +1,12 @@
 import { DOCUMENT} from '@angular/common';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from '../../models/menuItems';
 import AOS from "aos";
 import { PageScrollService } from 'ngx-page-scroll-core';
+import { TranslateService } from '@ngx-translate/core';
 
-const ITEM_IMPORTANTE = ["Contacto"];
+
+const ITEM_IMPORTANTE = ["contacto"];
 
 @Component({
   selector: 'app-navbar',
@@ -13,14 +15,26 @@ const ITEM_IMPORTANTE = ["Contacto"];
 })
 export class NavbarComponent implements OnInit{
 
-  @Input()
-  items: MenuItem[];
+  @Output() languageChange = new EventEmitter<string>();
+
+  @Input() items: MenuItem[];
   imageToolbar:string;
   itemsRegulares:MenuItem[] = [];
   itemsImportante: MenuItem[] = [];
+  currentLang: string;
 
   constructor(private pageScrollService: PageScrollService,
-              @Inject(DOCUMENT) private document: any){}
+    @Inject(DOCUMENT) private document: any,
+    public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+    this.currentLang = localStorage.getItem('currentLang') || 'es'; // Initialize from localStorage
+    this.translate.use(this.currentLang);
+    this.translate.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+      localStorage.setItem('currentLang', this.currentLang); // Save to localStorage on language change
+    });
+  }
 
 
   public redirigirEnPagina(id:string): void {
@@ -41,19 +55,17 @@ export class NavbarComponent implements OnInit{
     }
   }
 
-  private definirImportanciaItems(){
+  private definirImportanciaItems() {
+    this.itemsRegulares = [];
+    this.itemsImportante = [];
     this.items.forEach(item => {
-      ITEM_IMPORTANTE.forEach(itemImportante => {
-        if (item.nombre != itemImportante){
-          this.itemsRegulares.push(item);
-        }
-        else {
-          this.itemsImportante.push(item);
-        }
-      });
+      if (ITEM_IMPORTANTE.includes(item.idUbicacion)) {
+        this.itemsImportante.push(item);
+        
+      } else {
+        this.itemsRegulares.push(item);
+      }
     });
-    console.log(this.itemsRegulares);
-    console.log(this.itemsImportante);
   }
 
   ngOnInit(){
@@ -62,4 +74,13 @@ export class NavbarComponent implements OnInit{
     this.definirImportanciaItems();
   }
 
+  ngOnChanges() {
+    this.definirImportanciaItems();
+  }
+
+  switchLang(checked: boolean) {
+    const lang = checked ? 'en' : 'es';
+    this.translate.use(lang);
+    this.languageChange.emit(lang);
+  }
 }

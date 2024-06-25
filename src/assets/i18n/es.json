@@ -1,0 +1,129 @@
+{
+  "navbar":{
+    "items":[
+      {
+        "idUbicacion": "nosotros",
+        "nombre": "Nosotros"
+      },
+      {
+        "idUbicacion": "servicios",
+        "nombre": "Servicios"
+      },
+      {
+        "idUbicacion": "proyectos",
+        "nombre": "Proyectos"
+      },
+      {
+        "idUbicacion": "contacto",
+        "nombre": "Contacto"
+      }
+    ]
+  },
+  "nosotros": {
+    "description": "En Bardelhaus, somos ingenieras apasionadas por la tecnología, el desarrollo y la educación. Contamos con más de 5 años de experiencia en la administración de aplicativos, en Moodle, liderando procesos de gestión e innovación tecnológica en cursos y recursos educativos, y desarrollando páginas web y aplicaciones de calidad.",
+    "teamTitle": "Equipo",
+    "teamMates": [
+      {
+        "name": "Natalia Barbosa",
+        "profProfile": "Desarrolladora Full Stack"
+      },
+      {
+        "name": "Ichel Delgado",
+        "profProfile": "Desarrolladora Front-end"
+      }
+    ],
+    "contactBtnTitle": "Contactar"
+  },
+  "servicios":{
+      "servTitle": "Servicios",
+      "serviceItem": [
+        {
+          "imgUrl": "./assets/image/servicios/cursob.png",
+          "servName": "Cursos",
+          "servDescription": "Diseño microcurricular y tecnopedagógico de cursos."
+        },
+        {
+          "imgUrl": "./assets/image/servicios/recursob.png",
+          "servName": "Recursos educativos digitales",
+          "servDescription": "Diseño instruccional y creación de recursos."
+        },
+        {
+          "imgUrl": "./assets/image/servicios/webb.png",
+          "servName": "Desarrollo web",
+          "servDescription": "Desarrollo de páginas web y landing pages."
+        }
+      ]
+  },
+  "proyectos": {
+    "projectTitle": "Proyectos",
+    "projectItem": [
+      {
+        "imgUrl": "./assets/image/proyectos/jesval.png",
+        "projectType": "Landing page",
+        "projectName": "Jesvalstore",
+        "projectUrl": "https://jesvalstore.com"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/construmn.png",
+        "projectType": "Landing page",
+        "projectName": "Construm Caceres",
+        "projectUrl": "https://www.espaciosconstrumcaceres.com"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/unad.png",
+        "projectType": "Pagina Web",
+        "projectName": "Egresados UNAD",
+        "projectUrl": "https://egresados-unad.site"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/inandina.png",
+        "projectType": "Marketplace de cursos",
+        "projectName": "Inandina",
+        "projectUrl": null,
+        "modalId": 0,
+        "modalTitle": "Marketplace de cursos: Inandina",
+        "modalContent": "<p>Para este proyecto se evaluó y definió la mejor plataforma a usar de acuerdo con el nuevo modelo de Marketplace de cursos, algunas de las tareas desarrolladas fueron:</p><ol><li>Se integra la web de Inandina con Moodle, de modo que al generarse una compra a través de esta, se matriculase automaticamente el usuario al curso.</li><li>Se diseña y monta la estructura de los cursos autodirigidos en Moodle.</li><li>Se diseña e implementa bloque de configuración automática para los recursos de moodle.<p><b>Nota: </b>Este desarrollo se reestructuró y se encuentra en un <a target='_blank' href='https://github.com/natisbar/Block_configuration_moodle'>repositorio de github</a></p></li><li>Generación automática de certificados con QR después de finalizado el curso.</li><li>Espacio para validar autenticidad de certificado.</li></ol><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/marketplace.pdf'>Imágenes</a></div>"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/wtech.png",
+        "projectType": "Curso autodirigido con bot",
+        "projectName": "WTech/UNAD",
+        "projectUrl": null,
+        "modalId": 1,
+        "modalTitle": "Curso autodirigido con bot: WTech/UNAD",
+        "modalContent": "<p>Para este proyecto se diseñó una propuesta de estructura para un curso automatizado, manteniendo la línea de la estructura utilizada en los cursos actuales de la UNAD. Además, se ha implementado y configurado el curso automatizado, y se ha integrado exitosamente un chatbot dentro del mismo que saluda de manera personalizada, y es capaz de resolver preguntas relacionadas con el curso y proporcionar las rutas a algunos espacios al interior del curso.</p><div class='contenedor-img-modal'><img src='./assets/image/proyectos/curso_bot/curso_bot.png' alt=''></div>"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/linktic.png",
+        "projectType": "Diseño instruccional",
+        "projectName": "LinkTIC/CPE",
+        "projectUrl": null,
+        "modalId": 2,
+        "modalTitle": "Diseño instruccional: LinkTIC/CPE",
+        "modalContent": "<p>Para este proyecto se hizo el diseño microcurricular e instruccional de tres (3) cursos virtuales online y offline con una duración de 12 horas cada uno. Los temas abordados en estos cursos son: 1. Domótica 2. Alfabetización digital 3. Océanos y recursos hidrobiológicos.</p><p>Algunas de las tareas desarrolladas fueron:</p><ol><li>Diseño malla curricular, ficha técnica del curso y guía didáctica.</li><li>Diligenciamiento de guiones de acuerdo con propuesta de malla.</li><li>Generar cuestionarios para los tres (3) módulos de contenido y evaluación final.</li><li>Definir cuatro (4) retos (parte práctica) con su respectiva guía.</li></ol><div class='contenedor-img-modal' style='display: flex;justify-content: center;padding-top: 1rem;width: 100%;'><img src='./assets/image/proyectos/instruccional/instruccional.png' alt=''></div><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/instruccional.pdf'>Imágenes</a></div>"
+      }
+    ],
+    "seeMoreBtn": "Ver mas"
+  },
+  "contacto":{
+    "contactTitle": "Contacto",
+    "nameFieldName": "Nombre",
+    "reqFieldName": "*Este campo es requerido",
+    "nameFieldValid": "*El nombre no debe tener caracteres especiales ni numeros.",
+    "phoneFieldName": "Teléfono",
+    "phoneFieldValid": "*El número debe tener 10 digitos.",
+    "emailFieldName": "Email",
+    "emailFieldValid": "*El email no es válido.",
+    "contactFieldName": "Por donde desea ser contactado",
+    "messageFieldName": "Mensaje",
+    "sendBtnName": "Enviar",
+    "responseField": "Respuesta guardada",
+    "successRequest": "Tu mensaje ha sido enviada exitosamente.",
+    "incompleteInfo": "Por favor diligencie todos los campos marcados como obligatorios.",
+    "modalBtn": "Entendido"
+  },
+  "footer":{
+    "text1": "Copyright © Bardelhaus",
+    "text2": "Todos los derechos reservados."
+  }
+}

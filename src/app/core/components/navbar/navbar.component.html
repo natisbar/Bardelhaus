@@ -4,18 +4,14 @@
       <img src="{{imageToolbar}}" alt="Logo de Bardelhaus">
     </a>
     <ul class="navp menu-desktop" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
-      <li class="navp-item"
-          *ngFor="let item of itemsRegulares; let i as index">
-        <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
-          class="navp-link"
-          *ngIf="item.nombre != 'Contacto'">{{item.nombre}}</a>
+      <li class="navp-item" *ngFor="let item of itemsRegulares; let i = index">
+        <a (click)="redirigirEnPagina('#' + item.idUbicacion)" class="navp-link" *ngIf="item.nombre != 'Contacto'">{{item.nombre}}</a>
       </li>
     </ul>
   </div>
   <ul class="navp menu-desktop" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
-    <li class="navp-item" *ngFor="let item of itemsImportante; let i as index">
-      <a (click)="redirigirEnPagina('#' + item.idUbicacion)"
-        [className]="item.nombre == 'Contacto'?'importante':'navp-link'">{{item.nombre}}</a>
+    <li class="navp-item" *ngFor="let item of itemsImportante; let i = index">
+      <a (click)="redirigirEnPagina('#' + item.idUbicacion)" [className]="item.idUbicacion == 'contacto' ? 'importante' : 'navp-link'">{{item.nombre}}</a>
     </li>
   </ul>
   <ul class="navp menu-mobile" data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
@@ -26,7 +22,13 @@
       <ng-container *ngFor="let item of itemsRegulares; let i = index">
         <button mat-menu-item (click)="redirigirEnPagina('#' + item.idUbicacion)">{{item.nombre}}</button>
       </ng-container>
-      <button mat-menu-item (click)="redirigirEnPagina('#' + 'contacto')">Contacto</button>
+      <button mat-menu-item (click)="redirigirEnPagina('#contacto')">Contacto</button>
     </mat-menu>
   </ul>
+  <div class="toggle-container">
+    <mat-slide-toggle (change)="switchLang($event.checked)" [checked]="currentLang === 'en'" color="primary">
+      <span *ngIf="currentLang === 'es'">ES</span>
+      <span *ngIf="currentLang === 'en'">EN</span>
+    </mat-slide-toggle>
+  </div>
 </nav>

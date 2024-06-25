@@ -6,8 +6,9 @@ import { HttpgeneralService } from "./services/httpgeneral.service";
 import { FooterComponent } from './components/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 import { ModalNotificaciones } from "./services/modal.services";
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { ModalNotificaciones } from "./services/modal.services";
     RouterModule,
     MatButtonModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule,
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     MatButtonModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [
     HttpgeneralService,

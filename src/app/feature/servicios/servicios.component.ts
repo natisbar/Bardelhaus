@@ -1,35 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Servicio } from '../shared/model/servicio';
 import AOS from "aos";
-
-const SERVICIOS: Servicio[] = [
-  {
-    img: "./assets/image/servicios/cursob.png",
-    nombre: "Cursos",
-    descripcion: "Diseño microcurricular y tecnopedagógico de cursos.",
-  },
-  {
-    img: "./assets/image/servicios/recursob.png",
-    nombre: "Recursos educativos digitales",
-    descripcion: "Diseño instruccional y creación de recursos.",
-  },
-  {
-    img: "./assets/image/servicios/webb.png",
-    nombre: "Desarrollo web",
-    descripcion: "Desarrollo de páginas web y landing pages.",
-  },
-];
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.css']
 })
-export class ServiciosComponent implements OnInit {
+export class ServiciosComponent implements OnInit, OnDestroy {
 
-  public servicios: Servicio[] = SERVICIOS;
+  servTitle: string = '';
+  serviceItem: { imgUrl: string, servName: string, servDescription: string }[] = [];
+  private languageChangeSubscription!: Subscription;
+
+  constructor(private translate: TranslateService){}
 
   ngOnInit(): void {
     AOS.init();
+    this.loadTranslations();
+    this.languageChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.languageChangeSubscription.unsubscribe();
+  }
+
+  loadTranslations(): void {
+    this.translate.get('servicios.servTitle').subscribe((res: string) => {
+      this.servTitle = res;
+    });
+    this.translate.get('servicios.serviceItem').subscribe((res: any[]) => {
+      this.serviceItem = res;
+    });
   }
 }

@@ -1,12 +1,12 @@
 
 <section id="contacto">
   <div data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
-    <h2 class="titulo">Contacto</h2>
+    <h2 class="titulo">{{contactTitle}}</h2>
     <div class="contenedor-form">
       <form id="form-aplicacion" *ngIf="mostrarForm" [formGroup]="formAplicacion" #myForm="ngForm" (ngSubmit)="iniciarPeticionPost()">
 
         <div class="input-text">
-          <label for="nombre">Nombre: </label>
+          <label for="nombre">{{nameFieldName}}: </label>
           <input
             type="text"
             name="nombre"
@@ -15,16 +15,16 @@
             [class.is-invalid]="nombreField!.touched && !nombreField!.valid">
           <div class="mensaje-error" *ngIf="!nombreField!.valid  && (nombreField!.dirty || nombreField!.touched)">
             <div *ngIf="nombreField!.errors?.['required']">
-              *Este campo es requerido
+              {{reqFieldName}}
             </div>
             <div *ngIf="nombreField!.errors?.['stringValid']">
-              *El nombre no debe tener caracteres especiales ni numeros.
+              {{nameFieldValid}}
             </div>
           </div>
         </div>
 
         <div class="input-text">
-          <label for="telefono">Teléfono: </label>
+          <label for="telefono">{{phoneFieldName}}: </label>
           <input
             type="number"
             name="telefono"
@@ -33,16 +33,16 @@
             [class.is-invalid]="telefonoField!.touched && !telefonoField!.valid">
           <div class="mensaje-error" *ngIf="!telefonoField!.valid  && (telefonoField!.dirty || telefonoField!.touched)">
             <div *ngIf="telefonoField!.errors?.['required']">
-              *Este campo es requerido
+              {{reqFieldName}}
             </div>
             <div *ngIf="telefonoField!.errors?.['min']">
-              *El número debe tener 10 digitos.
+              {{phoneFieldValid}}
             </div>
           </div>
         </div>
 
         <div class="input-text">
-          <label for="email">Email: </label>
+          <label for="email">{{emailFieldName}}: </label>
           <input
             type="email"
             name="email"
@@ -51,18 +51,18 @@
             [class.is-invalid]="emailField!.touched && !emailField!.valid">
           <div class="mensaje-error" *ngIf="!emailField!.valid  && (emailField!.dirty || emailField!.touched)">
             <div *ngIf="emailField!.errors?.['required']">
-              *Este campo es requerido
+              {{reqFieldName}}
             </div>
             <div *ngIf="emailField!.errors?.['email']">
-              *El email no es válido.
+              {{reqFieldName}}
             </div>
           </div>
         </div>
 
-        <p>Por donde desea ser contactado: </p>
+        <p>{{contactFieldName}}: </p>
         <div class="contenedor-input-radio">
           <div class="input-radio">
-            <label for="medioPreferido">Email: </label>
+            <label for="medioPreferido">{{emailFieldName}}: </label>
             <input
               type="radio"
               name="medioPreferido"
@@ -71,7 +71,7 @@
           </div>
 
           <div class="input-radio">
-            <label for="medioPreferido">Teléfono: </label>
+            <label for="medioPreferido">{{phoneFieldName}}: </label>
             <input
               type="radio"
               name="medioPreferido"
@@ -81,7 +81,7 @@
         </div>
 
         <div class="input-text">
-          <label for="mensaje">Mensaje: </label>
+          <label for="mensaje">{{messageFieldName}}: </label>
           <textarea rows="5"
                     cols="40"
                     formControlName="mensaje"
@@ -90,18 +90,18 @@
           </textarea>
           <div class="mensaje-error" *ngIf="!mensajeField!.valid  && (mensajeField!.dirty || mensajeField!.touched)">
             <div *ngIf="mensajeField!.errors?.['required']">
-              *Este campo es requerido
+              {{reqFieldName}}
             </div>
           </div>
         </div>
 
 
         <div class="center-items">
-          <input type="submit" value="Enviar" class="btn-principal">
+          <input type="submit" value="{{sendBtnName}}" class="btn-principal">
         </div>
       </form>
     </div>
 
-    <h2 *ngIf="!mostrarForm" style="text-align: center;">Respuesta guardada</h2>
+    <h2 *ngIf="!mostrarForm" style="text-align: center;">{{responseField}}</h2>
   </div>
 </section>

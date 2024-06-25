@@ -3,33 +3,21 @@
   <div data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
     <div class="fila">
       <div class="columna1">
-        <p class="descripcion">
-          En Bardelhaus, somos ingenieras apasionadas por la tecnología, el desarrollo y la educación.
-          Contamos con más de 5 años de experiencia en la administración de aplicativos, en Moodle,
-          liderando procesos de gestión e innovación tecnológica en cursos y recursos educativos,
-          y desarrollando páginas web y aplicaciones de calidad.
-        </p>
+        <p class="descripcion">{{ description }}</p>
       </div>
       <div class="columna2">
-        <p class="titulo">Equipo</p>
-        <div class="etiqueta">
+        <p class="titulo">{{ teamTitle }}</p>
+        <div class="etiqueta" *ngFor="let teammate of teamMates">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
           <div class="persona">
-            <div class="nombre">Ichel Delgado</div>
-            <div class="perfil">Desarrolladora Front-end</div>
-          </div>
-        </div>
-        <div class="etiqueta">
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
-          <div class="persona">
-            <div class="nombre">Natalia Barbosa</div>
-            <div class="perfil">Desarrolladora Full Stack</div>
+            <div class="nombre">{{ teammate.name }}</div>
+            <div class="perfil">{{ teammate.profProfile }}</div>
           </div>
         </div>
       </div>
     </div>
     <div class="fila">
-      <a class="btn-principal" (click)="redirigirEnPagina('#contacto')">CONTACTAR</a>
+      <a class="btn-principal" (click)="redirigirEnPagina('#contacto')">{{ contactBtnTitle }}</a>
     </div>
   </div>
 </section>

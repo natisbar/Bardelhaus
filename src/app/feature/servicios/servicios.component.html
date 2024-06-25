@@ -1,19 +1,19 @@
 <section id="servicios">
-  <h2 class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">Servicios</h2>
+  <h2 class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">{{servTitle}}</h2>
   <div class="contenedor">
     <div class="servicio"
-        *ngFor = "let servicio of servicios; let i = index"
+        *ngFor = "let item of serviceItem"
         data-aos="slide-up" data-aos-duration="2000" data-aos-once="true">
         <div class="contenedor-img">
           <figure>
-            <img src="{{servicio.img}}" alt="">
+            <img src="{{item.imgUrl}}" alt="">
           </figure>
         </div>
         <div class="nombre">
-          <p>{{servicio.nombre}}</p>
+          <p>{{item.servName}}</p>
         </div>
         <div class="descripcion">
-          <p>{{servicio.descripcion}}</p>
+          <p>{{item.servDescription}}</p>
         </div>
     </div>
   </div>

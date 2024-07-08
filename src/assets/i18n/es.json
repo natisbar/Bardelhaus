@@ -73,9 +73,15 @@
       },
       {
         "imgUrl": "./assets/image/proyectos/unad.png",
-        "projectType": "Pagina Web",
+        "projectType": "Página Web",
         "projectName": "Egresados UNAD",
         "projectUrl": "https://icheld123.github.io/Agenda2023/#/"
+      },
+      {
+        "imgUrl": "./assets/image/proyectos/cyasas.png",
+        "projectType": "Página Web",
+        "projectName": "C&A SAS",
+        "projectUrl": "https://natisbar.github.io/CyaSas_angular/clientes"
       },
       {
         "imgUrl": "./assets/image/proyectos/inandina.png",

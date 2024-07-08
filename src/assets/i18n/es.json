@@ -24,10 +24,12 @@
     "teamTitle": "Equipo",
     "teamMates": [
       {
+        "repoUrl": "https://github.com/natisbar",
         "name": "Natalia Barbosa",
         "profProfile": "Desarrolladora Full Stack"
       },
       {
+        "repoUrl": "https://github.com/icheld123",
         "name": "Ichel Delgado",
         "profProfile": "Desarrolladora Front-end"
       }

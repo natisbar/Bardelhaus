@@ -42,6 +42,20 @@ div figure img{
   padding: 0.5rem 1rem;
   border-radius: 10px;
 }
+.fa-github {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.etiqueta a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.etiqueta a:hover {
+  color: #4078c0;
+}
+
 
 .etiqueta i{
   font-size: 1.8rem;

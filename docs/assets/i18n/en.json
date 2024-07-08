@@ -78,6 +78,12 @@
             "projectUrl": "https://icheld123.github.io/Agenda2023/#/"
         },
         {
+            "imgUrl": "./assets/image/proyectos/cyasas.png",
+            "projectType": "Web Page",
+            "projectName": "C&A SAS",
+            "projectUrl": "https://natisbar.github.io/CyaSas_angular/clientes"
+        },
+        {
             "imgUrl": "./assets/image/proyectos/inandina.png",
             "projectType": "Courses Marketplace",
             "projectName": "Inandina",

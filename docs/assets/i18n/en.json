@@ -120,7 +120,7 @@
         "responseField": "Response saved",
         "successRequest": "Your message has been successfully sent.",
         "incompleteInfo": "Please fill out all fields marked as required.",
-        "modalBtn": "Understood"
+        "modalBtn": "Understood" 
     },
     "footer":{
       "text1": "Copyright © Bardelhaus",

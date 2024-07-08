@@ -17,7 +17,7 @@ export class NosotrosComponent implements OnInit, OnDestroy {
   public pathImagenes: string;
   description: string = '';
   teamTitle: string = '';
-  teamMates: { name: string, profProfile: string }[] = [];
+  teamMates: { repoUrl: string, name: string, profProfile: string }[] = [];
   contactBtnTitle: string = '';  
   private languageChangeSubscription!: Subscription;
 
@@ -54,6 +54,7 @@ export class NosotrosComponent implements OnInit, OnDestroy {
     });
     this.translate.get('nosotros.teamMates').subscribe((res: any[]) => {
       this.teamMates = res;
+      console.log(this.teamMates)
     });
     this.translate.get('nosotros.contactBtnTitle').subscribe((res: string) => {
       this.contactBtnTitle = res;

@@ -8,7 +8,9 @@
       <div class="columna2">
         <p class="titulo">{{ teamTitle }}</p>
         <div class="etiqueta" *ngFor="let teammate of teamMates">
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
+          <a [href]="teammate.repoUrl" target="_blank">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
           <div class="persona">
             <div class="nombre">{{ teammate.name }}</div>
             <div class="perfil">{{ teammate.profProfile }}</div>

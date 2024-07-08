@@ -20,20 +20,22 @@
     ]
   },
   "nosotros": {
-      "description": "At Bardelhaus, we are engineers passionate about technology, development, and education. We have over 5 years of experience in application management, in Moodle, leading technological management and innovation processes in courses and educational resources, and developing quality websites and applications.",
-      "teamTitle": "Team",
-      "teamMates": [
-        {
-            "name": "Natalia Barbosa",
-            "profProfile": "Full Stack Developer"
-        },
-        {
-            "name": "Ichel Delgado",
-            "profProfile": "Front-end Developer"
-        }
-      ],
-      "contactBtnTitle": "Contact"
-    },
+    "description": "At Bardelhaus, we are engineers passionate about technology, development, and education. We have over 5 years of experience in application management, in Moodle, leading technological management and innovation processes in courses and educational resources, and developing quality websites and applications.",
+    "teamTitle": "Team",
+    "teamMates": [
+      {
+          "repoUrl": "https://github.com/natisbar",
+          "name": "Natalia Barbosa",
+          "profProfile": "Full Stack Developer"
+      },
+      {
+          "repoUrl": "https://github.com/icheld123",
+          "name": "Ichel Delgado",
+          "profProfile": "Front-end Developer"
+      }
+    ],
+    "contactBtnTitle": "Contact"
+  },
     "servicios":{
       "servTitle": "Services",
       "serviceItem": [

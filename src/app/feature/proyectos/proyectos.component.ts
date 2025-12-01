@@ -2,6 +2,8 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import AOS from "aos";
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import { TECHNOLOGY_ICONS } from 'src/app/shared/models/tecnologias';
 
 @Component({
   selector: 'app-proyectos',
@@ -12,9 +14,29 @@ import { Subscription } from 'rxjs';
 export class ClientesComponent implements OnInit{
 
   projectTitle: string = '';
-  projectItem: { imgUrl: string, projectType: string, projectName: string, projectUrl?: string, modalId?: number, modalTitle?:string, modalContent?: string }[] = [];  
+  projectItem: {
+    id: string,
+    imgUrl: string,
+    projectType: string,
+    projectName: string,
+    projectUrl?: string,
+    modalId?: number,
+    modalTitle?:string,
+    technologies: string[],
+    modalContent?: string
+  }[] = [];
   seeMoreBtn: string = '';
   private languageChangeSubscription!: Subscription;
+  customOptions: OwlOptions = {
+    loop: true,
+    dots: true,
+    items: 3,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
+  }
 
   public mostrarModal: boolean[] = [false, false, false];
   public modal = {
@@ -59,5 +81,12 @@ export class ClientesComponent implements OnInit{
       this.seeMoreBtn = res;
     });
   }
+
+  getIcon(name: string) {
+  let ruta = TECHNOLOGY_ICONS.find(t => t.name === name.toUpperCase())?.icon
+      || "";
+  console.log(ruta);
+  return ruta;
+}
 
 }

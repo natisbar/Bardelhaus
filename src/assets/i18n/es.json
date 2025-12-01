@@ -40,19 +40,28 @@
       "servTitle": "Servicios",
       "serviceItem": [
         {
-          "imgUrl": "./assets/image/servicios/cursob.png",
+          "id": 1,
+          "imgUrl": "./assets/image/servicios/cursoi.svg",
           "servName": "Cursos",
           "servDescription": "Diseño microcurricular y tecnopedagógico de cursos."
         },
         {
-          "imgUrl": "./assets/image/servicios/recursob.png",
+          "id": 2,
+          "imgUrl": "./assets/image/servicios/recursoi.svg",
           "servName": "Recursos educativos digitales",
           "servDescription": "Diseño instruccional y creación de recursos."
         },
         {
+          "id": 3,
           "imgUrl": "./assets/image/servicios/webb.png",
           "servName": "Desarrollo web",
           "servDescription": "Desarrollo de páginas web y landing pages."
+        },
+        {
+          "id": 4,
+          "imgUrl": "./assets/image/servicios/webb.png",
+          "servName": "Desarrollo de aplicaciones web a medida",
+          "servDescription": "Soluciones web personalizadas para tus procesos y necesidades."
         }
       ]
   },
@@ -60,55 +69,73 @@
     "projectTitle": "Proyectos",
     "projectItem": [
       {
+        "id": 1,
         "imgUrl": "./assets/image/proyectos/jesval.png",
         "projectType": "Landing page",
         "projectName": "Jesvalstore",
-        "projectUrl": "https://natisbar.github.io/jesvalstore/"
+        "projectUrl": "https://natisbar.github.io/jesvalstore/",
+        "technologies": ["Angular", "TypeScript", "CSS"],
+        "modalId": 0
       },
       {
+        "id": 2,
         "imgUrl": "./assets/image/proyectos/construmn.png",
-        "projectType": "Landing page (Proyecto Temporal)",
+        "projectType": "Landing page",
         "projectName": "Construm Caceres",
-        "projectUrl": "https://app.moqups.com/wdBHZd2CMyVEh4FjPBzgbN9r4cd40xUq/view/page/a8b49fd9f?ui=0&fit_width=1"
+        "projectUrl": "https://app.moqups.com/wdBHZd2CMyVEh4FjPBzgbN9r4cd40xUq/view/page/a8b49fd9f?ui=0&fit_width=1",
+        "technologies": ["Wordpress", "JavaScript", "HTML", "CSS"],
+        "modalId": 1
       },
       {
+        "id": 3,
         "imgUrl": "./assets/image/proyectos/unad.png",
         "projectType": "Página Web",
         "projectName": "Egresados UNAD",
-        "projectUrl": "https://icheld123.github.io/Agenda2023/#/"
+        "projectUrl": "https://icheld123.github.io/Agenda2023/#/",
+        "technologies": ["Angular", "TypeScript", "CSS", "Google APIs"],
+        "modalId": 2
       },
       {
+        "id": 4,
         "imgUrl": "./assets/image/proyectos/cyasas.png",
         "projectType": "Página Web",
         "projectName": "C&A SAS",
-        "projectUrl": "https://natisbar.github.io/CyaSas_angular/clientes"
+        "projectUrl": "https://natisbar.github.io/CyaSas_angular/clientes",
+        "technologies": ["Angular", "TypeScript", "CSS", "Google Apps Script"],
+        "modalId": 3
       },
       {
+        "id": 5,
         "imgUrl": "./assets/image/proyectos/inandina.png",
         "projectType": "Marketplace de cursos",
         "projectName": "Inandina",
         "projectUrl": null,
-        "modalId": 0,
+        "technologies": ["Wordpress", "Moodle", "JavaScript", "HTML", "CSS"],
+        "modalId": 4,
         "modalTitle": "Marketplace de cursos: Inandina",
-        "modalContent": "<p>Para este proyecto se evaluó y definió la mejor plataforma a usar de acuerdo con el nuevo modelo de Marketplace de cursos, algunas de las tareas desarrolladas fueron:</p><ol><li>Se integra la web de Inandina con Moodle, de modo que al generarse una compra a través de esta, se matriculase automaticamente el usuario al curso.</li><li>Se diseña y monta la estructura de los cursos autodirigidos en Moodle.</li><li>Se diseña e implementa bloque de configuración automática para los recursos de moodle.<p><b>Nota: </b>Este desarrollo se reestructuró y se encuentra en un <a target='_blank' href='https://github.com/natisbar/Block_configuration_moodle'>repositorio de github</a></p></li><li>Generación automática de certificados con QR después de finalizado el curso.</li><li>Espacio para validar autenticidad de certificado.</li></ol><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/marketplace.pdf'>Imágenes</a></div>"
+        "modalContent": "<p><b>Detalle:</b> Para este proyecto se evaluó y definió la mejor plataforma a usar de acuerdo con el nuevo modelo de Marketplace de cursos, algunas de las tareas desarrolladas fueron:</p><ol><li>Se integra la web de Inandina con Moodle, de modo que al generarse una compra a través de esta, se matriculase automaticamente el usuario al curso.</li><li>Se diseña y monta la estructura de los cursos autodirigidos en Moodle.</li><li>Se diseña e implementa bloque de configuración automática para los recursos de moodle.<p><b>Nota: </b>Este desarrollo se reestructuró y se encuentra en un <a target='_blank' href='https://github.com/natisbar/Block_configuration_moodle'>repositorio de github</a></p></li><li>Generación automática de certificados con QR después de finalizado el curso.</li><li>Espacio para validar autenticidad de certificado.</li></ol><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/marketplace.pdf'>Imágenes</a></div>"
       },
       {
+        "id": 6,
         "imgUrl": "./assets/image/proyectos/wtech.png",
-        "projectType": "Curso autodirigido con bot",
+        "projectType": "Curso autodirigido",
         "projectName": "WTech/UNAD",
         "projectUrl": null,
-        "modalId": 1,
+        "technologies": ["Moodle", "Botpress", "JavaScript", "HTML", "CSS"],
+        "modalId": 5,
         "modalTitle": "Curso autodirigido con bot: WTech/UNAD",
-        "modalContent": "<p>Para este proyecto se diseñó una propuesta de estructura para un curso automatizado, manteniendo la línea de la estructura utilizada en los cursos actuales de la UNAD. Además, se ha implementado y configurado el curso automatizado, y se ha integrado exitosamente un chatbot dentro del mismo que saluda de manera personalizada, y es capaz de resolver preguntas relacionadas con el curso y proporcionar las rutas a algunos espacios al interior del curso.</p><div class='contenedor-img-modal'><img src='./assets/image/proyectos/curso_bot/curso_bot.png' alt=''></div>"
+        "modalContent": "<p><b>Detalle:</b> Para este proyecto se diseñó una propuesta de estructura para un curso automatizado, manteniendo la línea de la estructura utilizada en los cursos actuales de la UNAD. Además, se ha implementado y configurado el curso automatizado, y se ha integrado exitosamente un chatbot dentro del mismo que saluda de manera personalizada, y es capaz de resolver preguntas relacionadas con el curso y proporcionar las rutas a algunos espacios al interior del curso.</p><div class='contenedor-img-modal'><img src='./assets/image/proyectos/curso_bot/curso_bot.png' alt=''></div>"
       },
       {
+        "id": 7,
         "imgUrl": "./assets/image/proyectos/linktic.png",
         "projectType": "Diseño instruccional",
         "projectName": "LinkTIC/CPE",
         "projectUrl": null,
-        "modalId": 2,
+        "technologies": null,
+        "modalId": 6,
         "modalTitle": "Diseño instruccional: LinkTIC/CPE",
-        "modalContent": "<p>Para este proyecto se hizo el diseño microcurricular e instruccional de tres (3) cursos virtuales online y offline con una duración de 12 horas cada uno. Los temas abordados en estos cursos son: 1. Domótica 2. Alfabetización digital 3. Océanos y recursos hidrobiológicos.</p><p>Algunas de las tareas desarrolladas fueron:</p><ol><li>Diseño malla curricular, ficha técnica del curso y guía didáctica.</li><li>Diligenciamiento de guiones de acuerdo con propuesta de malla.</li><li>Generar cuestionarios para los tres (3) módulos de contenido y evaluación final.</li><li>Definir cuatro (4) retos (parte práctica) con su respectiva guía.</li></ol><div class='contenedor-img-modal' style='display: flex;justify-content: center;padding-top: 1rem;width: 100%;'><img src='./assets/image/proyectos/instruccional/instruccional.png' alt=''></div><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/instruccional.pdf'>Imágenes</a></div>"
+        "modalContent": "<p><b>Detalle:</b> Para este proyecto se hizo el diseño microcurricular e instruccional de tres (3) cursos virtuales online y offline con una duración de 12 horas cada uno. Los temas abordados en estos cursos fueron: 1. Domótica 2. Alfabetización digital 3. Océanos y recursos hidrobiológicos.</p><p>Algunas de las tareas desarrolladas fueron:</p><ol><li>Diseño malla curricular, ficha técnica del curso y guía didáctica.</li><li>Diligenciamiento de guiones de acuerdo con propuesta de malla.</li><li>Generar cuestionarios para los tres (3) módulos de contenido y evaluación final.</li><li>Definir cuatro (4) retos (parte práctica) con su respectiva guía.</li></ol><div class='contenedor-img-modal' style='display: flex;justify-content: center;padding-top: 1rem;width: 100%;'><img src='./assets/image/proyectos/instruccional/instruccional.png' alt=''></div><div class='informacion'><a class='btn-principal' target='_blank' href='./assets/pdf/proyectos/instruccional.pdf'>Imágenes</a></div>"
       }
     ],
     "seeMoreBtn": "Ver mas"

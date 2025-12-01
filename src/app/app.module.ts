@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routerOptions: ExtraOptions ={
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule /* */,
+    CarouselModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

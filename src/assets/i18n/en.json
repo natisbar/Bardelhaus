@@ -40,19 +40,28 @@
       "servTitle": "Services",
       "serviceItem": [
         {
-          "imgUrl": "./assets/image/servicios/cursob.png",
+          "id": 1,
+          "imgUrl": "./assets/image/servicios/cursoi.svg",
           "servName": "Courses",
           "servDescription": "Microcurricular and technopedagogical course design."
         },
         {
-          "imgUrl": "./assets/image/servicios/recursob.png",
+          "id": 2,
+          "imgUrl": "./assets/image/servicios/recursoi.svg",
           "servName": "Digital educational resources",
           "servDescription": "Instructional design and resource creation."
         },
         {
+          "id": 3,
           "imgUrl": "./assets/image/servicios/webb.png",
           "servName": "Web Development",
           "servDescription": "Development of web pages and landing pages."
+        },
+        {
+          "id": 4,
+          "imgUrl": "./assets/image/servicios/webb.png",
+          "servName": "Desarrollo de aplicaciones web a medida",
+          "servDescription": "Soluciones web personalizadas para tus procesos y necesidades."
         }
       ]
     },
@@ -128,7 +137,7 @@
         "responseField": "Response saved",
         "successRequest": "Your message has been successfully sent.",
         "incompleteInfo": "Please fill out all fields marked as required.",
-        "modalBtn": "Understood" 
+        "modalBtn": "Understood"
     },
     "footer":{
       "text1": "Copyright © Bardelhaus",

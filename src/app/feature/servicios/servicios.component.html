@@ -1,21 +1,31 @@
 <section id="servicios">
   <h2 class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">{{servTitle}}</h2>
-  <div class="contenedor">
-    <div class="servicio"
-        *ngFor = "let item of serviceItem"
-        data-aos="slide-up" data-aos-duration="2000" data-aos-once="true">
-        <div class="contenedor-img">
-          <figure>
-            <img src="{{item.imgUrl}}" alt="">
-          </figure>
-        </div>
-        <div class="nombre">
-          <p>{{item.servName}}</p>
-        </div>
-        <div class="descripcion">
-          <p>{{item.servDescription}}</p>
-        </div>
+  <div class="contenedor" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
+    <div class="carrusel-wrapper">
+
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let item of serviceItem">
+          <ng-template carouselSlide>
+            <mat-card class="servicio-card">
+
+              <div class="icono-wrapper">
+                <div class="icono" [style.--mask-url]="'url(' + item.imgUrl + ')'"></div>
+              </div>
+
+              <mat-card-title class="titulo-card">
+                {{ item.servName }}
+              </mat-card-title>
+
+              <mat-card-content class="descripcion-card">
+                <p>{{ item.servDescription }}</p>
+              </mat-card-content>
+
+            </mat-card>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
+
   </div>
 </section>
 

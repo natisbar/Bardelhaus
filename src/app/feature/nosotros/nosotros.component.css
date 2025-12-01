@@ -88,6 +88,7 @@ div figure img{
   cursor: pointer;
   text-decoration: none;
   border: solid 2px BLACK;
+  transition: all 0.4s ease;
 }
 
 .btn-principal:hover{

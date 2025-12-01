@@ -1,4 +1,106 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+.tech-list {
+  margin-top: 1rem;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.tech-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tech-item span {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.descripcion{
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.informacion{
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.carrusel-proyectos {
+  width: 100%;
+  display: block;
+  background-color: #edf0f4;
+}
+
+.proyecto-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 1rem;
+  min-height: 320px;
+}
+
+mat-card {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.proyecto-card.mat-mdc-card {
+  background-color: #edf0f4;
+}
+
+.icono-wrapper {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.icono {
+  width: 100%;
+  height: 100%;
+
+  mask: var(--mask-url) no-repeat center;
+  -webkit-mask: var(--mask-url) no-repeat center;
+
+  background-color: #444;
+  transition: background-color 0.3s ease;
+}
+
+.icono:hover {
+  background-color: black;
+}
+
+.titulo-card {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 1rem 0rem;
+}
+
+.descripcion-card{
+  margin-top: 1rem
+}
+
+/* .descripcion-card a {
+  font-size: 1rem;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+} */
+
+
 
 #proyectos{
   background-color: #edf0f4;
@@ -42,39 +144,30 @@ img {
 }
 
 .proyecto{
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 1rem;
-  /* max-height: 650px; */
-  /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.29); */
-  /* border-radius: 10px; */
   width: 300px;
 }
 
 .contenedor-img{
+  width: 120px;
+  height: 120px;
   background-color: white;
-  padding: 0.6rem 0.8rem;
-  margin: auto;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  min-height: 100px;
-  border-radius: 80px;
+  overflow: hidden;
+  /* margin: auto; */
 }
 
-.descripcion{
-  font-size: 1rem;
-  text-align: center;
-  padding-top: 0.5rem;
-}
-
-.informacion{
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
+.contenedor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .btn-principal{
@@ -87,6 +180,7 @@ img {
   cursor: pointer;
   text-decoration: none;
   border: solid 2px BLACK;
+  transition: all 0.4s ease;
 }
 
 .btn-principal:hover{

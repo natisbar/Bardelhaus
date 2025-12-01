@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Servicio } from '../shared/model/servicio';
 import AOS from "aos";
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-servicios',
@@ -12,8 +12,18 @@ import { Subscription } from 'rxjs';
 export class ServiciosComponent implements OnInit, OnDestroy {
 
   servTitle: string = '';
-  serviceItem: { imgUrl: string, servName: string, servDescription: string }[] = [];
+  serviceItem: { id: string, imgUrl: string, servName: string, servDescription: string }[] = [];
   private languageChangeSubscription!: Subscription;
+  customOptions: OwlOptions = {
+    loop: true,
+    dots: true,
+    items: 4,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
+  }
 
   constructor(private translate: TranslateService){}
 

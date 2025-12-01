@@ -2,25 +2,31 @@
   <div class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
     <h2>{{projectTitle}}</h2>
   </div>
-  <div class="contenedor" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
-    <div class="proyecto" *ngFor="let item of projectItem; let i = index">
-      <div class="contenedor-img">
-        <figure>
-          <img [src]="item.imgUrl" alt="">
-        </figure>
-      </div>
-      <div class="descripcion">
-        <p>{{item.projectType}}</p>
-        <p><i>{{item.projectName}}</i></p>
-      </div>
-      <div class="informacion">
-        <a class="btn-principal" *ngIf="item.projectUrl; else modalBtn" [href]="item.projectUrl" target="_blank">{{ seeMoreBtn }}</a>
-        <ng-template #modalBtn>
-          <a class="btn-principal" (click)="abrirModal(item.modalId)">{{ seeMoreBtn }}</a>
-        </ng-template>
-      </div>
+  <div class="carrusel-proyectos" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let item of projectItem">
+          <ng-template carouselSlide>
+            <mat-card class="proyecto-card">
+
+              <div class="contenedor-img">
+                <figure>
+                  <img [src]="item.imgUrl" alt="Imagen {{ item.projectType }} - {{item.projectName}}">
+                </figure>
+              </div>
+              <mat-card-title class="titulo-card">
+                {{ item.projectType }} - {{item.projectName}}
+              </mat-card-title>
+
+              <mat-card-content class="descripcion-card">
+                <a class="btn-principal" (click)="abrirModal(item.modalId)">{{ seeMoreBtn }}</a>
+              </mat-card-content>
+
+            </mat-card>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
-  </div>
+
 </section>
 
 <div *ngFor="let item of projectItem; let i = index" [id]="'myModal' + (i + 1)" class="modal" [style.display]="mostrarModal[i] ? 'block' : 'none'">
@@ -29,6 +35,25 @@
       <span class="close" (click)="cerrarModal()">&times;</span>
       <h2>{{item.projectName}}</h2>
     </div>
-    <div class="modal-body" [innerHTML]="item.modalContent"></div>
+    <div class="modal-body">
+      <p><b>Tipo proyecto:</b> {{item.projectType}}</p>
+      <p><b>Empresa: </b>{{item.projectName}}</p>
+      <p *ngIf="item.projectUrl != null">
+        <b>Ruta: </b><a [href]="item.projectUrl" target="_blank">{{ item.projectName }}</a>
+      </p>
+      <div *ngIf="item.technologies != null && item.technologies.length" class="tech-list">
+        <p><b>Tecnologías:</b></p>
+        <div class="tech-icons">
+          <div class="tech-item" *ngFor="let tech of item.technologies">
+            <img
+              [src]="getIcon(tech)"
+              [alt]="tech"
+              matTooltip="{{tech}}"
+              matTooltipPosition="above">
+          </div>
+        </div>
+      </div>
+      <p class="tech-list" *ngIf="item.modalContent != null" [innerHTML]="item.modalContent">Tecnologías:</p>
+    </div>
   </div>
 </div>

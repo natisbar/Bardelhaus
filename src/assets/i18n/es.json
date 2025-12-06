@@ -25,11 +25,13 @@
     "teamMates": [
       {
         "repoUrl": "https://github.com/natisbar",
+        "cv": "./assets/pdf/cv/natalia_es.pdf",
         "name": "Natalia Barbosa",
         "profProfile": "Desarrolladora Full Stack"
       },
       {
         "repoUrl": "https://github.com/icheld123",
+        "cv": "./assets/pdf/cv/natalia_es.pdf",
         "name": "Ichel Delgado",
         "profProfile": "Desarrolladora Front-end"
       }

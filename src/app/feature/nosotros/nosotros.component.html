@@ -11,6 +11,9 @@
           <a [href]="teammate.repoUrl" target="_blank">
             <i class="fab fa-github" aria-hidden="true"></i>
           </a>
+          <a [href]="teammate.cv" target="_blank">
+            <i class="fas fa-id-card" aria-hidden="true"></i>
+          </a>
           <div class="persona">
             <div class="nombre">{{ teammate.name }}</div>
             <div class="perfil">{{ teammate.profProfile }}</div>
@@ -19,7 +22,7 @@
       </div>
     </div>
     <div class="fila">
-      <a class="btn-principal" (click)="redirigirEnPagina('#contacto')">{{ contactBtnTitle }}</a>
+      <button class="btn-principal" (click)="redirigirEnPagina('#contacto')">{{ contactBtnTitle }}</button>
     </div>
   </div>
 </section>

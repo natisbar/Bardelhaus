@@ -17,8 +17,8 @@ export class NosotrosComponent implements OnInit, OnDestroy {
   public pathImagenes: string;
   description: string = '';
   teamTitle: string = '';
-  teamMates: { repoUrl: string, name: string, profProfile: string }[] = [];
-  contactBtnTitle: string = '';  
+  teamMates: { repoUrl: string, cv: string, name: string, profProfile: string }[] = [];
+  contactBtnTitle: string = '';
   private languageChangeSubscription!: Subscription;
 
   constructor(private pageScrollService: PageScrollService,

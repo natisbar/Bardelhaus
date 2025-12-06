@@ -41,13 +41,13 @@
       "serviceItem": [
         {
           "id": 1,
-          "imgUrl": "./assets/image/servicios/cursoi.svg",
+          "imgUrl": "./assets/image/servicios/cursob.png",
           "servName": "Cursos",
           "servDescription": "Diseño microcurricular y tecnopedagógico de cursos."
         },
         {
           "id": 2,
-          "imgUrl": "./assets/image/servicios/recursoi.svg",
+          "imgUrl": "./assets/image/servicios/recursob.png",
           "servName": "Recursos educativos digitales",
           "servDescription": "Diseño instruccional y creación de recursos."
         },
@@ -59,7 +59,7 @@
         },
         {
           "id": 4,
-          "imgUrl": "./assets/image/servicios/webb.png",
+          "imgUrl": "./assets/image/servicios/desarrollo.png",
           "servName": "Desarrollo de aplicaciones web a medida",
           "servDescription": "Soluciones web personalizadas para tus procesos y necesidades."
         }

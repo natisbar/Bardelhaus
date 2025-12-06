@@ -8,9 +8,15 @@
           <ng-template carouselSlide>
             <mat-card class="servicio-card">
 
-              <div class="icono-wrapper">
-                <div class="icono" [style.--mask-url]="'url(' + item.imgUrl + ')'"></div>
+              <div class="contenedor-img">
+                <figure>
+                  <img src="{{item.imgUrl}}" alt="">
+                </figure>
               </div>
+
+              <!-- <div class="icono-wrapper">
+                <div class="icono" [style.--mask-url]="'url(' + item.imgUrl + ')'"></div>
+              </div> -->
 
               <mat-card-title class="titulo-card">
                 {{ item.servName }}

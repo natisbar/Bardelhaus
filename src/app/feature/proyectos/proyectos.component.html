@@ -2,30 +2,33 @@
   <div class="titulo" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
     <h2>{{projectTitle}}</h2>
   </div>
-  <div class="carrusel-proyectos" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
-      <owl-carousel-o [options]="customOptions">
-        <ng-container *ngFor="let item of projectItem">
-          <ng-template carouselSlide>
-            <mat-card class="proyecto-card">
+    <div class="contenedor" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
+      <div class="carrusel-proyectos">
+          <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let item of projectItem">
+              <ng-template carouselSlide>
+                <mat-card class="proyecto-card">
 
-              <div class="contenedor-img">
-                <figure>
-                  <img [src]="item.imgUrl" alt="Imagen {{ item.projectType }} - {{item.projectName}}">
-                </figure>
-              </div>
-              <mat-card-title class="titulo-card">
-                {{ item.projectType }} - {{item.projectName}}
-              </mat-card-title>
+                  <div class="contenedor-img">
+                    <figure>
+                      <img [src]="item.imgUrl" alt="Imagen {{ item.projectType }} - {{item.projectName}}">
+                    </figure>
+                  </div>
+                  <mat-card-title class="titulo-card">
+                    {{ item.projectType }} - {{item.projectName}}
+                  </mat-card-title>
 
-              <mat-card-content class="descripcion-card">
-                <a class="btn-principal" (click)="abrirModal(item.modalId)">{{ seeMoreBtn }}</a>
-              </mat-card-content>
+                  <mat-card-content class="descripcion-card">
+                    <a class="btn-principal" (click)="abrirModal(item.modalId)">{{ seeMoreBtn }}</a>
+                  </mat-card-content>
 
-            </mat-card>
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-    </div>
+                </mat-card>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+      </div>
+   </div>
+
 
 </section>
 
